@@ -1,18 +1,17 @@
 module.exports = {
-  content: [
-    "./pages/**/*.{js,jsx,ts,tsx}",
-    "./components/**/*.{js,jsx,ts,tsx}"
-  ],
+  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
         primary: "#0B3D91",
-        accent: "#FFB100"
+        accent: "#FFB100",
+        neutralBg: "#F7FAFF"
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'Arial']
+      borderRadius: {
+        xl: "1rem",
+        "2xl": "1.5rem"
       }
     }
   },
   plugins: []
-}
+};

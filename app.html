@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>V SIGN — Premium Signage Estimator</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0c0f;
+  --panel:#111217;
+  --card:#16181d;
+  --border:rgba(255,255,255,.06);
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+  --accent:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--text);
+}
+.app{
+  display:grid;
+  grid-template-columns:260px 1fr;
+  height:100vh;
+}
+.sidebar{
+  background:var(--panel);
+  border-right:1px solid var(--border);
+  padding:24px;
+}
+.brand{font-weight:700;font-size:18px}
+.nav{margin-top:40px;display:flex;flex-direction:column;gap:14px}
+.nav button{
+  background:none;border:none;color:var(--muted);
+  font-size:15px;text-align:left;
+  padding:10px 12px;border-radius:8px;
+  cursor:pointer;transition:.25s;
+}
+.nav button.active,.nav button:hover{
+  background:var(--card);color:var(--text);
+}
+.main{
+  padding:40px;
+  overflow-y:auto;
+}
+.view{display:none;animation:fade .3s ease}
+.view.active{display:block}
+@keyframes fade{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:none}
+}
+.hero{max-width:760px}
+.hero h1{font-size:38px;font-weight:600}
+.hero p{margin-top:14px;color:var(--muted);font-size:18px}
+
+/* Products */
+.products{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.product{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+  cursor:pointer;
+  transition:.25s;
+}
+.product:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,255,255,.18);
+}
+.product span{color:var(--muted);font-size:14px;display:block;margin-top:6px}
+.price{margin-top:14px;font-weight:600}
+
+/* Estimator */
+.estimator{
+  margin-top:30px;
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:30px;
+}
+.box{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:24px;
+}
+label{font-size:14px;color:var(--muted)}
+input,select{
+  width:100%;
+  margin-top:6px;
+  padding:10px;
+  background:#0b0c0f;
+  border:1px solid var(--border);
+  color:var(--text);
+  border-radius:8px;
+  font-size:15px;
+}
+.result{
+  font-size:28px;
+  font-weight:600;
+  margin-top:10px;
+}
+.btn{
+  margin-top:16px;
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  font-weight:600;
+  border:none;
+  cursor:pointer;
+}
+.btn-whatsapp{
+  background:#25D366;
+  color:#000;
+}
+
+/* Responsive */
+@media(max-width:1000px){
+  .app{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .products,.estimator{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+<aside class="sidebar">
+  <div class="brand">V SIGN</div>
+  <nav class="nav">
+    <button class="active" onclick="showView('overview',this)">Overview</button>
+    <button onclick="showView('products',this)">Products</button>
+    <button onclick="showView('estimate',this)">Estimate</button>
+  </nav>
+</aside>
+
+<main class="main">
+
+<section id="overview" class="view active">
+  <div class="hero">
+    <h1>Signage estimation,<br>done properly.</h1>
+    <p>Calm, transparent, city-aware budget ranges — without sales pressure.</p>
+  </div>
+</section>
+
+<section id="products" class="view">
+  <div class="hero">
+    <h1>Choose your signage</h1>
+    <p>Select a product to continue.</p>
+  </div>
+
+  <div class="products">
+    <div class="product" onclick="selectProduct('LED Shop Board',850,1500)">
+      <h3>LED Shop Board</h3>
+      <span>Retail storefront</span>
+      <div class="price">₹850 – ₹1,500 / sq ft</div>
+    </div>
+    <div class="product" onclick="selectProduct('ACP Hoarding',1200,2500)">
+      <h3>ACP Hoarding</h3>
+      <span>Outdoor signage</span>
+      <div class="price">₹1,200 – ₹2,500 / sq ft</div>
+    </div>
+    <div class="product" onclick="selectProduct('3D Letters',1500,4000)">
+      <h3>3D Letters</h3>
+      <span>Premium branding</span>
+      <div class="price">₹1,500 – ₹4,000 / sq ft</div>
+    </div>
+  </div>
+</section>
+
+<section id="estimate" class="view">
+  <div class="hero">
+    <h1 id="estTitle">Estimator</h1>
+    <p>Size, city & realistic pricing.</p>
+  </div>
+
+  <div class="estimator">
+    <div class="box">
+      <label>Width (ft)</label>
+      <input type="number" id="width" value="10" oninput="calculate()"/>
+      <label style="margin-top:14px">Height (ft)</label>
+      <input type="number" id="height" value="3" oninput="calculate()"/>
+
+      <label style="margin-top:14px">City</label>
+      <select id="city" onchange="calculate()">
+        <option value="1">Hyderabad</option>
+        <option value="1.05">Vijayawada</option>
+        <option value="1.08">Visakhapatnam</option>
+        <option value="1.04">Guntur</option>
+      </select>
+    </div>
+
+    <div class="box">
+      <label>Estimated budget range</label>
+      <div class="result" id="result">—</div>
+      <button class="btn btn-whatsapp" onclick="shareWhatsApp()">
+        Share on WhatsApp
+      </button>
+      <p style="color:var(--muted);font-size:13px;margin-top:10px">
+        Final quote confirmed after site visit.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<script>
+let rateMin=0,rateMax=0,productName='';
+
+function showView(id,btn){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function selectProduct(name,min,max){
+  productName=name; rateMin=min; rateMax=max;
+  document.getElementById('estTitle').innerText=name+" Estimator";
+  showView('estimate',document.querySelectorAll('.nav button')[2]);
+  calculate();
+}
+
+function calculate(){
+  const w=+width.value||0;
+  const h=+height.value||0;
+  const cityMul=+city.value||1;
+  const area=w*h;
+  if(!area||!rateMin) return;
+  const min=Math.round(area*rateMin*cityMul);
+  const max=Math.round(area*rateMax*cityMul);
+  result.innerText=`₹${min.toLocaleString()} – ₹${max.toLocaleString()}`;
+}
+
+function shareWhatsApp(){
+  const msg=`Hi, I estimated my signage budget on V SIGN.%0A
+Product: ${productName}%0A
+Size: ${width.value}ft × ${height.value}ft%0A
+Estimated range: ${result.innerText}%0A
+Please help me with next steps.`;
+
+  /* 🔴 REPLACE NUMBER BELOW WITH CLIENT'S WHATSAPP NUMBER */
+  const phone="91XXXXXXXXXX";
+
+  window.open(`https://wa.me/${phone}?text=${msg}`,"_blank");
+}
+</script>
+
+</body>
+</html>

@@ -1,279 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact — V SIGN | Signage in Andhra Pradesh & Telangana</title>
-  <meta name="description" content="Contact V SIGN for site visits, design queries or quotes. Serving Andhra Pradesh & Telangana. Book a free survey or request a quote from our Budget Planner." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <!-- Planner CSS (shared component) -->
-  <link rel="stylesheet" href="assets/planner/planner.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — V SIGN</title>
 
-  <style>
-    :root{
-      --primary:#0B3D91;
-      --accent:#FFB100;
-      --muted:#6B7280;
-      --bg:#FBFDFF;
-      --card:#FFFFFF;
-      --radius:16px;
-      --shadow: 0 14px 40px rgba(12,32,63,0.07);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0f172a;-webkit-font-smoothing:antialiased}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{background:#fff;border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:60}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#0A2E70);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:Poppins}
-    .hero{padding:42px 0 20px;background:linear-gradient(180deg, rgba(11,61,145,0.03), rgba(255,191,0,0.01));border-bottom:1px solid rgba(11,61,145,0.02)}
-    .hero h1{font-family:Poppins;font-size:30px;margin:0;color:var(--primary)}
-    .hero h2{margin-top:10px;font-size:18px;color:#0f172a}
-    .hero h3{margin-top:6px;font-size:14px;color:var(--muted);font-weight:600}
-    .grid-2{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:start;margin-top:18px}
-    .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:var(--shadow)}
-    form label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
-    input[type="text"], input[type="email"], input[type="tel"], textarea, select {width:100%;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);font-size:15px}
-    textarea{min-height:130px;resize:vertical}
-    .muted{color:var(--muted)}
-    .btn{padding:10px 14px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
-    .btn-primary{background:var(--primary);color:white}
-    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
-    .contact-info{display:flex;flex-direction:column;gap:10px}
-    .map-placeholder{width:100%;height:220px;background:linear-gradient(180deg,#e6eefc,#fbfdff);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
-    footer{margin-top:36px;padding:28px 0;background:#fff;border-top:1px solid rgba(15,23,42,0.04)}
-    .small{font-size:13px}
-    @media (max-width:980px){.grid-2{grid-template-columns:1fr}.map-placeholder{height:160px}}
-  </style>
+<meta name="description" content="Contact V SIGN for signage guidance and estimation support. We recommend estimating your signage budget first for faster, clearer discussions.">
 
-  <!-- LocalBusiness JSON-LD for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"LocalBusiness",
-    "name":"V SIGN",
-    "url":"https://yourdomain.com",
-    "telephone":"+91-99XXXXXXXX",
-    "address":{
-      "@type":"PostalAddress",
-      "addressLocality":"Hyderabad",
-      "addressRegion":"Telangana",
-      "addressCountry":"IN"
-    },
-    "areaServed":["Andhra Pradesh","Telangana"],
-    "description":"Design, fabrication & installation of premium signage including LED boards, ACP hoardings and 3D letters."
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#fbfbfd;
+  --text:#0f172a;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --accent:#0f172a;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:900px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* Header */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:72px;
+}
+
+.brand{
+  font-weight:600;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:15px;
+}
+
+nav a:hover{
+  color:var(--text);
+}
+
+/* Hero */
+.hero{
+  padding:88px 0 56px;
+}
+
+.hero h1{
+  font-size:38px;
+  font-weight:600;
+}
+
+.hero p{
+  margin-top:18px;
+  font-size:18px;
+  color:var(--muted);
+  max-width:720px;
+}
+
+/* Sections */
+.section{
+  padding:56px 0;
+  border-top:1px solid var(--border);
+}
+
+/* Cards */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:32px;
+}
+
+.card h2{
+  margin:0;
+  font-size:22px;
+  font-weight:600;
+}
+
+.card p{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:16px;
+}
+
+/* CTA */
+.cta-primary{
+  display:inline-block;
+  margin-top:24px;
+  padding:14px 26px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:10px;
+  font-weight:500;
+  text-decoration:none;
+}
+
+/* Contact info */
+.contact-item{
+  margin-top:16px;
+  font-size:16px;
+}
+
+.contact-item span{
+  color:var(--muted);
+}
+
+/* Footer */
+footer{
+  padding:48px 0;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  font-size:14px;
+}
+
+.footer-grid a{
+  display:block;
+  color:var(--muted);
+  text-decoration:none;
+  margin-top:8px;
+}
+
+.footer-grid a:hover{
+  color:var(--text);
+}
+
+@media(max-width:900px){
+  .grid,.footer-grid{
+    grid-template-columns:1fr;
   }
-  </script>
+  .hero h1{
+    font-size:34px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">VS</div>
-        <div>
-          <div style="font-weight:700;color:var(--primary);font-family:Poppins">V SIGN</div>
-          <div class="muted" style="font-size:12px">Premium LED & 3D Signage</div>
-        </div>
-      </div>
 
-      <nav style="display:flex;gap:12px;align-items:center">
-        <a href="index.html" class="muted">Home</a>
-        <a href="services.html" class="muted">Services</a>
-        <a href="blogs.html" class="muted">Blog</a>
-        <a href="contact.html" class="muted">Contact</a>
-        <button onclick="openPlanner()" class="btn" style="background:var(--accent);border-radius:12px;padding:10px 14px">Get Quote</button>
-      </nav>
+<header>
+  <div class="container nav">
+    <div class="brand">V SIGN</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="blogs.html">Insights</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero container">
+  <h1>Get in touch</h1>
+  <p>
+    We’re happy to help with signage guidance, clarification, or next steps.
+    For the most useful conversation, we recommend estimating your budget first.
+  </p>
+</section>
+
+<section class="section">
+  <div class="container grid">
+
+    <!-- Estimate First -->
+    <div class="card">
+      <h2>Estimate before contacting</h2>
+      <p>
+        The estimator gives you a realistic budget range based on
+        your size and location. This helps us assist you faster
+        and more accurately.
+      </p>
+      <a href="app.html" class="cta-primary">
+        Estimate signage budget
+      </a>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Contact V SIGN</h1>
-        <h2>Book a site visit • Request a detailed quote • Talk to our signage experts</h2>
-        <h3>Free site visits across Andhra Pradesh & Telangana — get a final quote within 48 hours after measurement.</h3>
+    <!-- Direct Contact -->
+    <div class="card">
+      <h2>Contact details</h2>
+      <p>
+        If you already understand your requirement,
+        you can reach us directly.
+      </p>
+
+      <div class="contact-item">
+        <span>Email:</span><br>
+        hello@vsign.example
       </div>
-    </section>
 
-    <section class="container" style="padding:28px 0">
-      <div class="grid-2">
-        <!-- Contact form -->
-        <div>
-          <div class="card">
-            <h3 style="margin:0 0 8px 0">Get in touch</h3>
-            <p class="muted" style="margin-top:6px">Fill the form and we will call you back. For urgent enquiries call +91 99XXXXXXX.</p>
-
-            <form id="contactForm" style="margin-top:12px" onsubmit="submitContact(event)" novalidate>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-                <div>
-                  <label for="name">Name</label>
-                  <input id="name" name="name" type="text" required />
-                </div>
-                <div>
-                  <label for="phone">Phone</label>
-                  <input id="phone" name="phone" type="tel" required />
-                </div>
-              </div>
-
-              <div style="margin-top:10px">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="you@company.com" />
-              </div>
-
-              <div style="margin-top:10px">
-                <label for="city">City</label>
-                <select id="city" name="city">
-                  <option value="hyderabad">Hyderabad</option>
-                  <option value="vijayawada">Vijayawada</option>
-                  <option value="visakhapatnam">Visakhapatnam</option>
-                  <option value="guntur">Guntur</option>
-                </select>
-              </div>
-
-              <div style="margin-top:10px">
-                <label for="service">Interested in</label>
-                <select id="service" name="service">
-                  <option value="led-shop">LED Shop Board</option>
-                  <option value="acp-hoarding">ACP Hoarding</option>
-                  <option value="3d-letters">3D Letters</option>
-                  <option value="wayfinding">Wayfinding</option>
-                </select>
-              </div>
-
-              <div style="margin-top:10px">
-                <label for="message">Message / Project details</label>
-                <textarea id="message" name="message" placeholder="Brief project details, location, timelines..."></textarea>
-              </div>
-
-              <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
-                <button type="submit" id="submitBtn" class="btn btn-primary">Request callback</button>
-                <button type="button" onclick="openPlanner()" class="btn btn-ghost">Estimate now</button>
-                <div id="formMsg" class="muted" style="font-size:13px"></div>
-              </div>
-            </form>
-
-            <p class="muted" style="margin-top:10px">We respond within 24–48 hours on weekdays. For urgent requests call the number above.</p>
-          </div>
-
-          <!-- small trust / CTA -->
-          <div class="card" style="margin-top:14px;display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <div style="font-weight:700">Free site survey</div>
-              <div class="muted">Book a free site visit — measurements & final quote within 48 hours.</div>
-            </div>
-            <div>
-              <button class="btn btn-primary" onclick="openPlanner()">Get Instant Quote</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right column: contact info + map -->
-        <aside>
-          <div class="card">
-            <div style="font-weight:700">Office & Showroom</div>
-            <div class="muted" style="margin-top:8px">
-              V SIGN — Hyderabad showroom<br/>
-              12/3 Industrial Estate, Road 9, Hyderabad, Telangana<br/>
-              <strong>Phone:</strong> +91 99XXXXXXX<br/>
-              <strong>Email:</strong> hello@vsign.example
-            </div>
-
-            <div style="margin-top:12px">
-              <div class="map-placeholder">Map placeholder – replace with Google Maps iframe or static image</div>
-            </div>
-
-            <div style="margin-top:12px">
-              <div style="font-weight:700">Service area</div>
-              <div class="muted" style="margin-top:6px">We serve locations across Andhra Pradesh and Telangana — Hyderabad, Vijayawada, Visakhapatnam, Guntur and nearby cities.</div>
-            </div>
-
-            <div style="margin-top:12px">
-              <div style="font-weight:700">Working hours</div>
-              <div class="muted" style="margin-top:6px">Mon — Sat: 9:00 AM — 6:00 PM</div>
-            </div>
-          </div>
-        </aside>
+      <div class="contact-item">
+        <span>Phone / WhatsApp:</span><br>
+        +91 9XXXXXXXXX
       </div>
-    </section>
 
-    <footer>
-      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-        <div>
-          <div style="font-weight:700;color:var(--primary)">V SIGN</div>
-          <div class="muted">End-to-end signage solutions — design, fabricate & install.</div>
-        </div>
-        <div style="text-align:right">
-          <div class="muted">Support: hello@vsign.example</div>
-          <div class="muted">Phone: +91 99XXXXXXX</div>
-        </div>
-        <div style="width:100%;text-align:center;margin-top:12px;color:var(--muted);font-size:13px">© <span id="yr"></span> V SIGN. All rights reserved.</div>
+      <div class="contact-item">
+        <span>Service area:</span><br>
+        Andhra Pradesh & Telangana
       </div>
-    </footer>
-  </main>
+    </div>
 
-  <!-- Planner JS (injects modal + logic) -->
-  <script src="assets/planner/planner.js"></script>
+  </div>
+</section>
 
-  <script>
-    // set current year
-    document.getElementById('yr').textContent = new Date().getFullYear();
+</main>
 
-    // Basic contact form handler:
-    // - tries to POST to /api/contact (serverless endpoint)
-    // - if that fails, falls back to mailto: for instant testing
-    async function submitContact(e) {
-      e.preventDefault();
-      const btn = document.getElementById('submitBtn');
-      const msg = document.getElementById('formMsg');
-      btn.disabled = true;
-      msg.textContent = 'Sending...';
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>V SIGN</strong>
+      <p style="margin-top:10px;color:var(--muted)">
+        Transparent signage estimation platform.
+      </p>
+    </div>
 
-      const payload = {
-        name: document.getElementById('name').value.trim(),
-        phone: document.getElementById('phone').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        city: document.getElementById('city').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value.trim(),
-        createdAt: new Date().toISOString()
-      };
+    <div>
+      <strong>Explore</strong>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="blogs.html">Insights</a>
+    </div>
 
-      // Basic validation
-      if (!payload.name || !payload.phone) {
-        msg.textContent = 'Please enter your name and phone.';
-        btn.disabled = false;
-        return;
-      }
+    <div>
+      <strong>Get started</strong>
+      <a href="app.html">Estimate budget</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
 
-      try {
-        // try serverless endpoint (recommended). Replace '/api/contact' with your endpoint.
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(payload)
-        });
-        if (res.ok) {
-          msg.textContent = 'Thanks — we will call you shortly.';
-          e.target.reset();
-          btn.disabled = false;
-          return;
-        } else {
-          // server returned error — fallback to mailto
-          throw new Error('server error');
-        }
-      } catch (err) {
-        // fallback: open mailto with prefilled body so user can still send
-        const subject = encodeURIComponent('V SIGN inquiry from ' + payload.name);
-        const body = encodeURIComponent(
-          `Name: ${payload.name}\nPhone: ${payload.phone}\nEmail: ${payload.email}\nCity: ${payload.city}\nService: ${payload.service}\n\nMessage:\n${payload.message}`
-        );
-        window.location.href = `mailto:hello@vsign.example?subject=${subject}&body=${body}`;
-        msg.textContent = 'Unable to contact server — opening your email client to send the message.';
-        btn.disabled = false;
-      }
-    }
-  </script>
 </body>
 </html>

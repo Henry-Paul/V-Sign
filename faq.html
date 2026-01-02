@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>FAQ — V SIGN | Signage Pricing, Installation & Warranty</title>
+<meta name="description" content="Frequently asked questions about signage pricing, installation, materials, warranties and permissions in Andhra Pradesh & Telangana." />
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/planner/planner.css"/>
+
+<style>
+:root{
+  --primary:#0B3D91;
+  --accent:#FFB100;
+  --muted:#6B7280;
+  --bg:#FBFDFF;
+  --card:#FFFFFF;
+  --shadow:0 14px 40px rgba(12,32,63,0.06);
+}
+body{margin:0;font-family:Inter,system-ui;background:var(--bg);color:#0f172a}
+.container{max-width:960px;margin:0 auto;padding:0 20px}
+header{background:#fff;border-bottom:1px solid rgba(0,0,0,.04)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#0A2E70);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:Poppins}
+.hero{padding:40px 0 20px;border-bottom:1px solid rgba(11,61,145,.05)}
+.hero h1{font-family:Poppins;font-size:32px;color:var(--primary)}
+.hero h2{margin-top:10px;font-size:18px}
+.hero h3{margin-top:6px;color:var(--muted);font-weight:600}
+
+.faq{margin-top:26px}
+.item{background:#fff;border-radius:14px;box-shadow:var(--shadow);margin-bottom:14px}
+.q{padding:16px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.a{padding:0 16px 16px;color:#374151;display:none;line-height:1.6}
+.item.active .a{display:block}
+.icon{font-size:18px;color:var(--primary)}
+
+.cta{background:linear-gradient(180deg,#fff,#f6f9ff);padding:20px;border-radius:16px;box-shadow:var(--shadow);margin:32px 0;text-align:center}
+.btn{padding:12px 16px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-accent{background:var(--accent)}
+
+footer{margin-top:40px;padding:28px 0;background:#fff;border-top:1px solid rgba(0,0,0,.04)}
+</style>
+
+<!-- FAQPage Schema for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "How much does signage cost per square foot?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Signage typically ranges from ₹800 to ₹4,000 per sq ft depending on material, lighting, city and installation complexity."
+    }
+  },{
+    "@type": "Question",
+    "name": "Is the budget planner price final?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. The planner provides an estimate range. Final pricing is confirmed after a site visit and measurement."
+    }
+  },{
+    "@type": "Question",
+    "name": "Do you provide installation and permissions?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. We handle fabrication, installation and guidance on permissions where applicable."
+    }
+  },{
+    "@type": "Question",
+    "name": "Do prices vary by city?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Installation access, logistics and local permits can slightly affect pricing."
+    }
+  }]
+}
+</script>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="logo">VS</div>
+      <div>
+        <strong style="font-family:Poppins;color:var(--primary)">V SIGN</strong>
+        <div style="font-size:12px;color:var(--muted)">Premium Signage</div>
+      </div>
+    </div>
+    <nav style="display:flex;gap:14px;align-items:center">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="services.html">Services</a>
+      <a href="blogs.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <button class="btn btn-accent" onclick="openPlanner()">Estimate</button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="hero">
+  <h1>Frequently Asked Questions</h1>
+  <h2>Clear answers about pricing, materials, installation & warranties</h2>
+  <h3>Serving businesses across Andhra Pradesh & Telangana</h3>
+</section>
+
+<section class="faq">
+
+  <div class="item">
+    <div class="q">How much does signage cost per square foot? <span class="icon">+</span></div>
+    <div class="a">
+      Prices typically range from <strong>₹800 to ₹4,000 per sq ft</strong>.
+      Factors include material, lighting, height, city and installation complexity.
+      <br/><br/>
+      <button class="btn btn-primary" onclick="openPlanner()">Calculate estimate</button>
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="q">Is the budget planner price final? <span class="icon">+</span></div>
+    <div class="a">
+      No. The planner gives a realistic <strong>price range</strong>.
+      Final pricing is confirmed after site inspection and measurements.
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="q">Do you provide installation services? <span class="icon">+</span></div>
+    <div class="a">
+      Yes. We provide end-to-end service including fabrication, transport and installation.
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="q">Do prices vary by city or location? <span class="icon">+</span></div>
+    <div class="a">
+      Yes. Factors like access height, permissions, logistics and manpower affect pricing.
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="q">What warranty do you provide? <span class="icon">+</span></div>
+    <div class="a">
+      We offer <strong>3-year, 5-year and 10-year warranties</strong> depending on product type.
+    </div>
+  </div>
+
+  <div class="item">
+    <div class="q">Do you handle government permissions? <span class="icon">+</span></div>
+    <div class="a">
+      We guide you through required permissions. Final approvals depend on local authorities.
+    </div>
+  </div>
+
+</section>
+
+<div class="cta">
+  <h2>Still unsure about budget?</h2>
+  <p>Use our smart estimator to get a transparent pricing range in under 30 seconds.</p>
+  <button class="btn btn-primary" onclick="openPlanner()">Open Budget Planner</button>
+</div>
+
+</main>
+
+<footer>
+  <div class="container" style="text-align:center">
+    <strong style="color:var(--primary)">V SIGN</strong>
+    <div style="color:var(--muted)">Andhra Pradesh & Telangana</div>
+    <div style="font-size:13px;color:var(--muted)">© <span id="yr"></span> V SIGN</div>
+  </div>
+</footer>
+
+<script src="assets/planner/planner.js"></script>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Accordion logic
+document.querySelectorAll('.q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item = q.parentElement;
+    item.classList.toggle('active');
+  });
+});
+</script>
+
+</body>
+</html>

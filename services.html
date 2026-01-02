@@ -1,841 +1,482 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signage Services | V SIGN - LED, 3D, Terrace Signage in Hyderabad, Vijayawada, Vizag</title>
-    <meta name="description" content="Complete signage services in Andhra Pradesh & Telangana. Terrace signage, 3D letters, LED boards, hospital signage, wayfinding systems with in-house manufacturing.">
-    
-    <!-- Structured Data for Service Business -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "serviceType": "Signage Manufacturing & Installation",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "V SIGN",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Hyderabad",
-                "addressRegion": "Telangana",
-                "addressCountry": "IN"
-            }
-        },
-        "areaServed": {
-            "@type": "State",
-            "name": ["Andhra Pradesh", "Telangana"]
-        },
-        "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Signage Services",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Terrace LED Signage"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "3D Letter Signage"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Hospital Signage Systems"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Wayfinding Signage"
-                    }
-                }
-            ]
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>V SIGN — Services | Premium Signage in Andhra Pradesh & Telangana</title>
+  <meta name="description" content="V SIGN services: Terrace signage, ACP hoarding, LED shop boards, 3D letters and more. Use our budget planner to get instant range-based estimates." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#0B3D91;
+      --accent:#FFB100;
+      --muted:#6B7280;
+      --bg:#FBFDFF;
+      --card:#FFFFFF;
+      --glass: rgba(11,61,145,0.06);
+      --radius:18px;
+      --shadow: 0 8px 24px rgba(12, 32, 63, 0.08);
     }
-    </script>
-    
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      margin:0;background:var(--bg);color:#0f172a;line-height:1.45;-webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1150px;margin:0 auto;padding:0 20px;}
+    header{background:#fff;border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:60}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#0A2E70);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:Poppins;font-size:18px;box-shadow:var(--shadow)}
+    .hero{padding:48px 0 28px;background:linear-gradient(180deg, rgba(11,61,145,0.04), rgba(255,191,0,0.01));border-bottom:1px solid rgba(11,61,145,0.02)}
+    .hero h1{font-family:Poppins,Inter;font-size:32px;margin:0;color:var(--primary);line-height:1.04}
+    .hero p.lead{color:var(--muted);margin-top:10px;font-size:15px}
+    .kicker{display:inline-block;background:var(--glass);color:var(--primary);padding:6px 10px;border-radius:12px;font-weight:600;margin-bottom:12px}
+    .grid-3{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .service-card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid rgba(11,61,145,0.03);box-shadow:var(--shadow)}
+    .service-card img{width:100%;height:160px;object-fit:cover}
+    .service-body{padding:14px}
+    .price{font-weight:700;color:var(--primary);font-size:16px}
+    .muted{color:var(--muted);font-size:14px}
+    .btn{padding:10px 14px;border-radius:12px;font-weight:600;border:0}
+    .btn-primary{background:var(--primary);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
+    footer{margin-top:48px;padding:32px 0;background:#fff;border-top:1px solid rgba(15,23,42,0.04)}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow)}
+    /* Modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:200}
+    .modal{width:100%;max-width:920px;background:var(--card);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(2,6,23,0.45);max-height:92vh;overflow:auto}
+    .step-bar{height:10px;background:#eef2ff;border-radius:999px;overflow:hidden;margin-top:10px}
+    .step-fill{height:100%;background:linear-gradient(90deg,var(--primary),#3b82f6);width:0%}
+    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:start}
+    .line-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(15,23,42,0.04)}
+    .total{font-size:20px;font-weight:800;color:var(--primary)}
+    .note{font-size:13px;color:var(--muted);margin-top:8px}
+    @media (max-width:980px){.grid-3{grid-template-columns:1fr;}.services-grid{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
+    @media (max-width:640px){.services-grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
+  </style>
 </head>
 <body>
-    <!-- Contact Bar -->
-    <div class="contact-bar">
-        <div class="container">
-            <div class="contact-info">
-                <a href="tel:+919848012345"><i class="fas fa-phone"></i> +91 98480 12345</a>
-                <a href="mailto:info@vsign.com"><i class="fas fa-envelope"></i> info@vsign.com</a>
-                <span><i class="fas fa-map-marker-alt"></i> Hyderabad • Vijayawada • Vizag</span>
-            </div>
-            <div class="contact-actions">
-                <a href="https://wa.me/919848012345" class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <button class="live-chat-btn" onclick="openChat()">
-                    <i class="fas fa-comment"></i> Live Chat
-                </button>
-            </div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">VS</div>
+        <div>
+          <div style="font-weight:700;color:var(--primary);font-family:Poppins">V SIGN</div>
+          <div style="font-size:12px;color:var(--muted)">Premium LED & 3D Signage</div>
         </div>
+      </div>
+
+      <nav style="display:flex;gap:12px;align-items:center">
+        <a href="index.html" style="color:var(--muted)">Home</a>
+        <a href="#services" style="color:var(--muted)">Services</a>
+        <a href="blogs.html" style="color:var(--muted)">Blog</a>
+        <a href="contact.html" style="color:var(--muted)">Contact</a>
+        <button onclick="openPlanner()" class="btn" style="background:var(--accent);border-radius:12px;padding:10px 14px;font-weight:700">Get Instant Quote</button>
+      </nav>
     </div>
+  </header>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <h1>V SIGN</h1>
-                <span>Premium Signage Solutions</span>
-            </a>
-            
-            <button class="mobile-menu-btn" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="services.html" class="nav-link active">Services</a>
-                <a href="budget-planner.html" class="nav-link">Budget Planner</a>
-                <a href="blogs.html" class="nav-link">Blogs</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <a href="budget-planner.html" class="btn-primary">Get Quote</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Services Hero -->
-    <section class="services-hero" id="terrace">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Comprehensive Signage Solutions</h1>
-                <p>End-to-end signage services across Andhra Pradesh & Telangana with in-house manufacturing and professional installation</p>
-                <a href="budget-planner.html" class="btn-primary btn-large">
-                    <i class="fas fa-calculator"></i> Get Instant Quote
-                </a>
-            </div>
-        </div>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="kicker">Full project support • In-house manufacturing • Free site visit</div>
+        <h1>Our Services — build, install & maintain premium signage</h1>
+        <p class="lead">From shop-front signboards to terrace top hoardings and 3D letters — we manage the full cycle: design, fabrication, electrical fit-out and installation. Use the estimator from any service to get an instant budget range.</p>
+        <h2 style="margin-top:18px;color:var(--primary)">Select a service to start</h2>
+        <h3 style="color:var(--muted);font-weight:600;margin-top:6px">Click "Configure" to prefill the Budget Planner with service defaults</h3>
+      </div>
     </section>
 
-    <!-- Services Navigation -->
-    <div class="services-nav">
-        <div class="container">
-            <a href="#terrace" class="service-nav-link active">Terrace Signage</a>
-            <a href="#shop" class="service-nav-link">Shop Boards</a>
-            <a href="#3d" class="service-nav-link">3D Letters</a>
-            <a href="#hospital" class="service-nav-link">Hospital Signage</a>
-            <a href="#wayfinding" class="service-nav-link">Wayfinding</a>
-            <a href="#maintenance" class="service-nav-link">Maintenance</a>
-        </div>
-    </div>
+    <section id="services" class="container" style="padding:28px 0">
+      <div class="grid-3">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <h2 style="font-size:20px;margin:0">All Services</h2>
+              <div class="muted" style="margin-top:6px">Choose a service to configure an estimate or request a site visit.</div>
+            </div>
+            <div style="text-align:right">
+              <div class="small muted">Fast quote</div>
+              <div style="font-weight:700">Instant range-based estimates</div>
+            </div>
+          </div>
 
-    <!-- Terrace Signage -->
-    <section class="service-detail" id="terrace-detail">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon">
-                    <i class="fas fa-building"></i>
+          <div class="services-grid" style="margin-top:14px">
+            <!-- Service 1 -->
+            <article class="service-card">
+              <img src="assets/images/led-shop.jpg" alt="LED Shop Board">
+              <div class="service-body">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-weight:700">LED Shop Board</div>
+                    <div class="muted">Retail storefront signage — durable & bright</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">₹850 – ₹1,500 / sqft</div>
+                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('led-shop')">Configure</button></div>
+                  </div>
                 </div>
-                <div>
-                    <h2>Terrace & High-Rise Building Signage</h2>
-                    <p class="service-subtitle">Premium rooftop signage for maximum visibility 24/7</p>
+              </div>
+            </article>
+
+            <!-- Service 2 -->
+            <article class="service-card">
+              <img src="assets/images/acp-hoarding.jpg" alt="ACP Hoarding">
+              <div class="service-body">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-weight:700">ACP Terrace / Hoarding</div>
+                    <div class="muted">Large building-top hoardings; wind load and structure support</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">₹1,200 – ₹2,500 / sqft</div>
+                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('acp-hoarding')">Configure</button></div>
+                  </div>
                 </div>
-            </div>
-            
-            <div class="service-content">
-                <div class="service-image">
-                    <img src="assets/images/terrace-signage.jpg" alt="Terrace LED Signage Hyderabad" loading="lazy">
-                    <div class="image-badge">
-                        <i class="fas fa-shield-alt"></i> 10-Year Warranty
-                    </div>
+              </div>
+            </article>
+
+            <!-- Service 3 -->
+            <article class="service-card">
+              <img src="assets/images/3d-letters.jpg" alt="3D Letters">
+              <div class="service-body">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-weight:700">3D Stainless Letters</div>
+                    <div class="muted">Luxury finish letters in stainless / brass</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">₹1,500 – ₹4,000 / sqft</div>
+                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('3d-letters')">Configure</button></div>
+                  </div>
                 </div>
-                
-                <div class="service-info">
-                    <h3>High-Rise Signage Excellence</h3>
-                    <p>Our terrace signage solutions are engineered for durability and visibility. Designed specifically for high-rise buildings in Hyderabad, Vijayawada, Vizag, and across AP & TS.</p>
-                    
-                    <div class="features-grid">
-                        <div class="feature">
-                            <i class="fas fa-wind"></i>
-                            <h4>Wind Load Certified</h4>
-                            <p>Structures tested for 150+ kmph winds</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-sun"></i>
-                            <h4>24/7 Visibility</h4>
-                            <p>High-brightness LEDs for day & night</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-bolt"></i>
-                            <h4>Energy Efficient</h4>
-                            <p>Low power consumption LED systems</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-tools"></i>
-                            <h4>Easy Maintenance</h4>
-                            <p>Accessible design for easy servicing</p>
-                        </div>
-                    </div>
-                    
-                    <div class="specifications">
-                        <h4>Technical Specifications</h4>
-                        <ul>
-                            <li><strong>Materials:</strong> ACP, Stainless Steel, Aluminum</li>
-                            <li><strong>LED Type:</strong> SMD 5050, High Brightness</li>
-                            <li><strong>Warranty:</strong> 3, 5, or 10 years options</li>
-                            <li><strong>Installation:</strong> 30-90 working days</li>
-                            <li><strong>Service Areas:</strong> Hyderabad, Vijayawada, Vizag, Guntur</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-actions">
-                        <a href="budget-planner.html" class="btn-primary">
-                            <i class="fas fa-calculator"></i> Get Quote
-                        </a>
-                        <a href="contact.html" class="btn-secondary">
-                            <i class="fas fa-phone"></i> Schedule Site Visit
-                        </a>
-                    </div>
+              </div>
+            </article>
+
+            <!-- Service 4 -->
+            <article class="service-card">
+              <img src="assets/images/wayfinding.jpg" alt="Wayfinding">
+              <div class="service-body">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-weight:700">Wayfinding & Directional</div>
+                    <div class="muted">Clear, accessible signage for campuses & hospitals</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">₹800 – ₹1,800 / sqft</div>
+                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('wayfinding')">Configure</button></div>
+                  </div>
                 </div>
-            </div>
-            
-            <!-- Case Studies -->
-            <div class="case-studies">
-                <h3>Recent Terrace Projects</h3>
-                <div class="cases-grid">
-                    <div class="case-card">
-                        <img src="assets/images/case1.jpg" alt="High-rise Terrace Signage Hyderabad" loading="lazy">
-                        <div class="case-info">
-                            <span class="case-location">Hyderabad</span>
-                            <h4>35-Story Commercial Tower</h4>
-                            <p>40ft ACP LED signage with wind load calculations</p>
-                            <div class="case-details">
-                                <span><i class="fas fa-ruler"></i> 12x4 ft</span>
-                                <span><i class="fas fa-clock"></i> 45 days</span>
-                                <span><i class="fas fa-shield-alt"></i> 10-year warranty</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="case-card">
-                        <img src="assets/images/case2.jpg" alt="Apartment Terrace Signage Vijayawada" loading="lazy">
-                        <div class="case-info">
-                            <span class="case-location">Vijayawada</span>
-                            <h4>Luxury Apartment Complex</h4>
-                            <p>Stainless steel 3D letters with RGB lighting</p>
-                            <div class="case-details">
-                                <span><i class="fas fa-ruler"></i> 15x3 ft</span>
-                                <span><i class="fas fa-clock"></i> 60 days</span>
-                                <span><i class="fas fa-shield-alt"></i> 5-year warranty</span>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+            </article>
+
+            <!-- Service 5 -->
+            <article class="service-card">
+              <img src="assets/images/hospital-sign.jpg" alt="Hospital Signage">
+              <div class="service-body">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-weight:700">Hospital & Clinic Signage</div>
+                    <div class="muted">Emergency boards, directional & compliance signage</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">₹900 – ₹2,000 / sqft</div>
+                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('hospital')">Configure</button></div>
+                  </div>
                 </div>
-            </div>
+              </div>
+            </article>
+
+            <!-- Service 6 -->
+            <article class="service-card">
+              <img src="assets/images/school-sign.jpg" alt="School Signage">
+              <div class="service-body">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <div>
+                    <div style="font-weight:700">School & College Signage</div>
+                    <div class="muted">Name boards, wayfinding & safety signage</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="price">₹800 – ₹1,600 / sqft</div>
+                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('school')">Configure</button></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
+
+        <aside>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-size:13px;color:var(--muted)">Need help choosing?</div>
+                <div style="font-weight:700">Talk to our signage experts</div>
+                <div class="muted" style="margin-top:6px">We recommend a free site visit for accurate final pricing.</div>
+              </div>
+              <div>
+                <a href="tel:+919999999999" class="btn btn-ghost">Call</a>
+              </div>
+            </div>
+
+            <div style="margin-top:12px">
+              <div style="font-weight:700">Our process</div>
+              <ol class="muted" style="margin-top:8px;padding-left:16px">
+                <li>Site visit & measurement</li>
+                <li>Design & proof</li>
+                <li>Fabrication & QA</li>
+                <li>Installation & AMC</li>
+              </ol>
+            </div>
+
+            <div style="margin-top:12px">
+              <div style="font-weight:700">Why local matters</div>
+              <div class="muted" style="margin-top:6px">Local knowledge (AP & Telangana) reduces permit time and optimizes visibility for regional languages and placement.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- Shop Boards -->
-    <section class="service-detail alt-bg" id="shop-detail">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon">
-                    <i class="fas fa-store"></i>
-                </div>
-                <div>
-                    <h2>Shop Boards & Retail Signage</h2>
-                    <p class="service-subtitle">Eye-catching storefront signage to attract customers</p>
-                </div>
-            </div>
-            
-            <div class="service-content reverse">
-                <div class="service-info">
-                    <h3>Boost Your Retail Visibility</h3>
-                    <p>Transform your storefront with professional signage that attracts customers and builds brand recognition. Perfect for shops, showrooms, and retail outlets across Andhra Pradesh & Telangana.</p>
-                    
-                    <div class="features-grid">
-                        <div class="feature">
-                            <i class="fas fa-bolt"></i>
-                            <h4>Quick Installation</h4>
-                            <p>7-9 working days completion</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-palette"></i>
-                            <h4>Custom Designs</h4>
-                            <p>Tailored to your brand identity</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-rupee-sign"></i>
-                            <h4>Affordable Options</h4>
-                            <p>Starting from ₹850/sqft</p>
-                        </div>
-                        <div class="feature">
-                            <i class="fas fa-cloud-sun"></i>
-                            <h4>Weather Resistant</h4>
-                            <p>Built for outdoor conditions</p>
-                        </div>
-                    </div>
-                    
-                    <div class="materials-section">
-                        <h4>Popular Materials</h4>
-                        <div class="materials-grid">
-                            <div class="material">
-                                <img src="assets/images/acp-board.jpg" alt="ACP Board Signage" loading="lazy">
-                                <h5>ACP Board</h5>
-                                <p>Most popular, durable</p>
-                                <span class="price">₹850-1,200/sqft</span>
-                            </div>
-                            <div class="material">
-                                <img src="assets/images/acrylic-led.jpg" alt="Acrylic LED Signage" loading="lazy">
-                                <h5>Acrylic LED</h5>
-                                <p>Modern glow effect</p>
-                                <span class="price">₹1,200-1,800/sqft</span>
-                            </div>
-                            <div class="material">
-                                <img src="assets/images/neon-sign.jpg" alt="Neon Signage" loading="lazy">
-                                <h5>Neon Flex</h5>
-                                <p>Vibrant colors</p>
-                                <span class="price">₹1,500-2,500/sqft</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-image">
-                    <img src="assets/images/shop-board.jpg" alt="Shop LED Board Hyderabad" loading="lazy">
-                    <div class="image-badge">
-                        <i class="fas fa-star"></i> Best Seller
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pricing-guide">
-                <h3>Sample Pricing Guide</h3>
-                <div class="pricing-table">
-                    <div class="pricing-header">
-                        <div>Size</div>
-                        <div>Material</div>
-                        <div>LED Type</div>
-                        <div>Approx. Price</div>
-                    </div>
-                    <div class="pricing-row">
-                        <div>4x2 ft</div>
-                        <div>ACP Board</div>
-                        <div>Standard White</div>
-                        <div>₹6,800 - ₹9,600</div>
-                    </div>
-                    <div class="pricing-row">
-                        <div>6x3 ft</div>
-                        <div>Acrylic LED</div>
-                        <div>Premium Bright</div>
-                        <div>₹21,600 - ₹32,400</div>
-                    </div>
-                    <div class="pricing-row">
-                        <div>8x4 ft</div>
-                        <div>Stainless Steel</div>
-                        <div>RGB Color</div>
-                        <div>₹38,400 - ₹76,800</div>
-                    </div>
-                </div>
-                <p class="note">*Prices include GST. Installation charges extra based on location.</p>
-            </div>
+    <footer>
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+          <div>
+            <div style="font-weight:700;color:var(--primary)">V SIGN</div>
+            <div class="muted" style="max-width:360px">End-to-end signage solutions — design, fabricate, install. Serving Andhra Pradesh & Telangana.</div>
+          </div>
+          <div style="text-align:right">
+            <div class="muted">Support: hello@vsign.example</div>
+            <div class="muted">Phone: +91 99XXXXXXX</div>
+          </div>
         </div>
-    </section>
-
-    <!-- 3D Letters -->
-    <section class="service-detail" id="3d-detail">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon">
-                    <i class="fas fa-text-height"></i>
-                </div>
-                <div>
-                    <h2>3D Letters & Dimensional Signage</h2>
-                    <p class="service-subtitle">Premium dimensional signage for luxury branding</p>
-                </div>
-            </div>
-            
-            <div class="service-content">
-                <div class="service-image">
-                    <img src="assets/images/3d-letters.jpg" alt="3D Letters Signage Hyderabad" loading="lazy">
-                    <div class="image-badge">
-                        <i class="fas fa-gem"></i> Premium Service
-                    </div>
-                </div>
-                
-                <div class="service-info">
-                    <h3>Luxury Branding Solutions</h3>
-                    <p>Make a lasting impression with our premium 3D letter signage. Perfect for corporate offices, luxury brands, hotels, and high-end retail stores in Hyderabad, Vijayawada, and Vizag.</p>
-                    
-                    <div class="materials-showcase">
-                        <h4>Material Options</h4>
-                        <div class="material-options">
-                            <div class="material-option active" data-material="stainless">
-                                <i class="fas fa-industry"></i>
-                                <span>Stainless Steel</span>
-                            </div>
-                            <div class="material-option" data-material="brass">
-                                <i class="fas fa-crown"></i>
-                                <span>Brass</span>
-                            </div>
-                            <div class="material-option" data-material="acrylic">
-                                <i class="fas fa-lightbulb"></i>
-                                <span>Acrylic Glow</span>
-                            </div>
-                            <div class="material-option" data-material="aluminum">
-                                <i class="fas fa-weight"></i>
-                                <span>Aluminum</span>
-                            </div>
-                        </div>
-                        
-                        <div class="material-details" id="stainless-details">
-                            <h5>Stainless Steel 3D Letters</h5>
-                            <p>Mirror finish or brushed finish available. Rust-proof and durable. Perfect for corporate identity and luxury branding.</p>
-                            <ul>
-                                <li>Thickness: 1.5mm to 3mm</li>
-                                <li>Finish: Mirror, Brushed, Matt</li>
-                                <li>Mounting: Wall, Facade, Free-standing</li>
-                                <li>Price Range: ₹1,800-3,500/sqft</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="illumination-options">
-                        <h4>Illumination Options</h4>
-                        <div class="illumination-grid">
-                            <div class="option">
-                                <i class="fas fa-lightbulb"></i>
-                                <h5>Front Lit</h5>
-                                <p>Light from front</p>
-                            </div>
-                            <div class="option">
-                                <i class="fas fa-sun"></i>
-                                <h5>Back Lit</h5>
-                                <p>Glow from behind</p>
-                            </div>
-                            <div class="option">
-                                <i class="fas fa-border-all"></i>
-                                <h5>Edge Lit</h5>
-                                <p>Light around edges</p>
-                            </div>
-                            <div class="option">
-                                <i class="fas fa-rainbow"></i>
-                                <h5>RGB Color</h5>
-                                <p>Multi-color effects</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Design Process -->
-            <div class="design-process">
-                <h3>Our 3D Design Process</h3>
-                <div class="process-steps">
-                    <div class="step">
-                        <div class="step-number">01</div>
-                        <h4>Concept Design</h4>
-                        <p>3D visualization of your branding</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">02</div>
-                        <h4>Material Selection</h4>
-                        <p>Choose from premium materials</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">03</div>
-                        <h4>Fabrication</h4>
-                        <p>CNC cutting & finishing</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">04</div>
-                        <h4>Installation</h4>
-                        <p>Professional mounting</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Hospital Signage -->
-    <section class="service-detail alt-bg" id="hospital-detail">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon">
-                    <i class="fas fa-hospital"></i>
-                </div>
-                <div>
-                    <h2>Hospital & Healthcare Signage</h2>
-                    <p class="service-subtitle">Complete wayfinding and emergency signage systems</p>
-                </div>
-            </div>
-            
-            <div class="service-content">
-                <div class="service-info">
-                    <h3>Healthcare Facility Signage Systems</h3>
-                    <p>Specialized signage solutions for hospitals, clinics, and medical facilities. Designed for clarity, safety, and patient comfort.</p>
-                    
-                    <div class="applications-grid">
-                        <div class="application">
-                            <i class="fas fa-map-signs"></i>
-                            <h4>Wayfinding Systems</h4>
-                            <p>Clear directional signage</p>
-                        </div>
-                        <div class="application">
-                            <i class="fas fa-ambulance"></i>
-                            <h4>Emergency Signage</h4>
-                            <p>24/7 visible emergency signs</p>
-                        </div>
-                        <div class="application">
-                            <i class="fas fa-hand-sparkles"></i>
-                            <h4>Anti-Bacterial</h4>
-                            <p>Hygienic surface materials</p>
-                        </div>
-                        <div class="application">
-                            <i class="fas fa-wheelchair"></i>
-                            <h4>ADA Compliant</h4>
-                            <p>Accessible design standards</p>
-                        </div>
-                    </div>
-                    
-                    <div class="requirements">
-                        <h4>Hospital Signage Requirements</h4>
-                        <div class="requirements-list">
-                            <div class="requirement">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Clear visibility day & night</span>
-                            </div>
-                            <div class="requirement">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Easy to clean surfaces</span>
-                            </div>
-                            <div class="requirement">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Durable & long-lasting</span>
-                            </div>
-                            <div class="requirement">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Emergency power backup</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-image">
-                    <img src="assets/images/hospital-signage.jpg" alt="Hospital Signage Vizag" loading="lazy">
-                    <div class="image-badge">
-                        <i class="fas fa-heartbeat"></i> Medical Grade
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Package Options -->
-            <div class="packages">
-                <h3>Hospital Signage Packages</h3>
-                <div class="package-grid">
-                    <div class="package">
-                        <div class="package-header">
-                            <h4>Basic Package</h4>
-                            <div class="price">From ₹2.5 Lakhs</div>
-                        </div>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> Main Entrance Signage</li>
-                            <li><i class="fas fa-check"></i> Directional Boards</li>
-                            <li><i class="fas fa-check"></i> Department Signs</li>
-                            <li><i class="fas fa-check"></i> 3-Year Warranty</li>
-                        </ul>
-                        <a href="budget-planner.html" class="btn-primary">Get Quote</a>
-                    </div>
-                    
-                    <div class="package">
-                        <div class="package-header">
-                            <h4>Standard Package</h4>
-                            <div class="price">From ₹5 Lakhs</div>
-                            <span class="popular">Most Popular</span>
-                        </div>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> All Basic Features</li>
-                            <li><i class="fas fa-check"></i> Emergency Signage</li>
-                            <li><i class="fas fa-check"></i> LED Illumination</li>
-                            <li><i class="fas fa-check"></i> 5-Year Warranty</li>
-                            <li><i class="fas fa-check"></i> 1 Year AMC</li>
-                        </ul>
-                        <a href="budget-planner.html" class="btn-primary">Get Quote</a>
-                    </div>
-                    
-                    <div class="package">
-                        <div class="package-header">
-                            <h4>Premium Package</h4>
-                            <div class="price">From ₹8 Lakhs</div>
-                        </div>
-                        <ul class="package-features">
-                            <li><i class="fas fa-check"></i> All Standard Features</li>
-                            <li><i class="fas fa-check"></i> Complete Wayfinding</li>
-                            <li><i class="fas fa-check"></i> Custom Branding</li>
-                            <li><i class="fas fa-check"></i> 10-Year Warranty</li>
-                            <li><i class="fas fa-check"></i> 3 Years AMC</li>
-                        </ul>
-                        <a href="budget-planner.html" class="btn-primary">Get Quote</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Wayfinding -->
-    <section class="service-detail" id="wayfinding-detail">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon">
-                    <i class="fas fa-map-signs"></i>
-                </div>
-                <div>
-                    <h2>Wayfinding & Directional Signage</h2>
-                    <p class="service-subtitle">Intuitive navigation systems for complexes and campuses</p>
-                </div>
-            </div>
-            
-            <div class="service-content">
-                <div class="service-image">
-                    <img src="assets/images/wayfinding.jpg" alt="Wayfinding Signage Hyderabad" loading="lazy">
-                    <div class="image-badge">
-                        <i class="fas fa-users"></i> User Friendly
-                    </div>
-                </div>
-                
-                <div class="service-info">
-                    <h3>Simplify Navigation</h3>
-                    <p>Professional wayfinding systems for educational institutions, corporate campuses, shopping malls, and public spaces across Andhra Pradesh & Telangana.</p>
-                    
-                    <div class="wayfinding-types">
-                        <h4>Wayfinding Sign Types</h4>
-                        <div class="types-grid">
-                            <div class="type">
-                                <h5>Identification Signs</h5>
-                                <p>Building names, department signs</p>
-                            </div>
-                            <div class="type">
-                                <h5>Directional Signs</h5>
-                                <p>Arrows and directions</p>
-                            </div>
-                            <div class="type">
-                                <h5>Informational Signs</h5>
-                                <p>Maps and directories</p>
-                            </div>
-                            <div class="type">
-                                <h5>Regulatory Signs</h5>
-                                <p>Rules and regulations</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="benefits">
-                        <h4>Benefits of Professional Wayfinding</h4>
-                        <ul>
-                            <li>Reduces visitor confusion and stress</li>
-                            <li>Improves accessibility for all users</li>
-                            <li>Enhances safety and emergency navigation</li>
-                            <li>Creates professional appearance</li>
-                            <li>Complies with ADA and local regulations</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Maintenance Services -->
-    <section class="service-detail alt-bg" id="maintenance-detail">
-        <div class="container">
-            <div class="service-header">
-                <div class="service-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <div>
-                    <h2>Maintenance & AMC Services</h2>
-                    <p class="service-subtitle">Annual Maintenance Contracts for signage systems</p>
-                </div>
-            </div>
-            
-            <div class="service-content reverse">
-                <div class="service-info">
-                    <h3>Keep Your Signage Glowing</h3>
-                    <p>Extend the life and performance of your signage with our comprehensive maintenance services. Available for all our signage installations across AP & TS.</p>
-                    
-                    <div class="maintenance-services">
-                        <div class="service-item">
-                            <i class="fas fa-broom"></i>
-                            <div>
-                                <h4>Regular Cleaning</h4>
-                                <p>Quarterly cleaning to maintain brightness</p>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <i class="fas fa-bolt"></i>
-                            <div>
-                                <h4>Electrical Checks</h4>
-                                <p>Monthly electrical system inspections</p>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <i class="fas fa-lightbulb"></i>
-                            <div>
-                                <h4>LED Replacement</h4>
-                                <p>Immediate replacement of faulty LEDs</p>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <i class="fas fa-headset"></i>
-                            <div>
-                                <h4>24/7 Support</h4>
-                                <p>Emergency support within 48 hours</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="amc-pricing">
-                        <h4>AMC Pricing</h4>
-                        <div class="pricing-options">
-                            <div class="option">
-                                <h5>Basic AMC</h5>
-                                <div class="price">15% of project cost/year</div>
-                                <ul>
-                                    <li>Bi-annual cleaning</li>
-                                    <li>LED replacement (material extra)</li>
-                                    <li>Electrical checks</li>
-                                </ul>
-                            </div>
-                            <div class="option">
-                                <h5>Premium AMC</h5>
-                                <div class="price">20% of project cost/year</div>
-                                <ul>
-                                    <li>Quarterly cleaning</li>
-                                    <li>Complete LED coverage</li>
-                                    <li>Priority support (24-hour response)</li>
-                                    <li>Structural inspections</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="service-image">
-                    <img src="assets/images/maintenance.jpg" alt="Signage Maintenance Hyderabad" loading="lazy">
-                    <div class="image-badge">
-                        <i class="fas fa-clock"></i> 48-Hour Response
-                    </div>
-                </div>
-            </div>
-            
-            <!-- CTA Section -->
-            <div class="service-cta">
-                <h3>Ready to Start Your Project?</h3>
-                <p>Get a free site visit and detailed quote for your signage requirements</p>
-                <div class="cta-actions">
-                    <a href="budget-planner.html" class="btn-primary btn-large">
-                        <i class="fas fa-calculator"></i> Get Instant Quote
-                    </a>
-                    <a href="contact.html" class="btn-secondary btn-large">
-                        <i class="fas fa-phone"></i> Call for Consultation
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>V SIGN</h3>
-                    <p class="footer-description">
-                        Premium signage manufacturer and installer serving Andhra Pradesh & Telangana 
-                        with in-house fabrication and professional installation.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="budget-planner.html">Budget Planner</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#terrace">Terrace Signage</a></li>
-                        <li><a href="#shop">Shop Boards</a></li>
-                        <li><a href="#3d">3D Letters</a></li>
-                        <li><a href="#hospital">Hospital Signage</a></li>
-                        <li><a href="#wayfinding">Wayfinding</a></li>
-                        <li><a href="#maintenance">Maintenance</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+919848012345">+91 98480 12345</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@vsign.com">info@vsign.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Hyderabad, Telangana</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Sat: 9AM-7PM</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 V SIGN. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
-        </div>
+        <div style="text-align:center;margin-top:18px;color:var(--muted);font-size:13px">© <span id="yr"></span> V SIGN. All rights reserved.</div>
+      </div>
     </footer>
+  </main>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/services.js"></script>
+  <!-- Modal: Budget Planner (same integrated modal - copy from index if you prefer single source) -->
+  <div id="plannerBackdrop" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal" role="document" aria-labelledby="plannerTitle">
+      <div class="modal-head" style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div id="plannerTitle" style="font-weight:700;font-size:18px">Interactive Budget Planner</div>
+          <div class="muted" style="margin-top:4px">Smart estimator — area × per-sqft ranges. Use the Configure button to prefill service.</div>
+          <div class="step-bar" aria-hidden="true" style="margin-top:8px"><div id="stepFill" class="step-fill" style="width:0%"></div></div>
+        </div>
+        <div>
+          <button onclick="closePlanner()" class="btn btn-ghost" aria-label="Close planner">Close</button>
+        </div>
+      </div>
+
+      <div style="margin-top:12px" class="grid-2">
+        <div>
+          <div id="stepArea">
+            <div class="step" data-step="1">
+              <label>Selected service</label>
+              <select id="serviceSelect" onchange="onServiceChange()" aria-label="Service select">
+                <option value="led-shop">LED Shop Board — ₹850 – ₹1,500 / sqft</option>
+                <option value="acp-hoarding">ACP Hoarding — ₹1,200 – ₹2,500 / sqft</option>
+                <option value="3d-letters">3D Stainless Letters — ₹1,500 – ₹4,000 / sqft</option>
+                <option value="wayfinding">Wayfinding — ₹800 – ₹1,800 / sqft</option>
+                <option value="hospital">Hospital — ₹900 – ₹2,000 / sqft</option>
+                <option value="school">School Signage — ₹800 – ₹1,600 / sqft</option>
+              </select>
+              <div class="note">Tip: choose the service that best matches your signage type; it sets default per-sqft ranges.</div>
+            </div>
+
+            <div class="step" data-step="2" style="margin-top:12px">
+              <label>Width (ft)</label>
+              <input id="widthInput" type="number" min="0.5" step="0.1" value="8">
+              <label style="margin-top:10px">Height (ft)</label>
+              <input id="heightInput" type="number" min="0.5" step="0.1" value="3">
+              <div class="note">Area = Width × Height. Example: 8 × 3 = 24 sqft.</div>
+            </div>
+
+            <div class="step" data-step="3" style="margin-top:12px">
+              <label>City</label>
+              <select id="citySelect">
+                <option value="hyderabad">Hyderabad</option>
+                <option value="vijayawada">Vijayawada</option>
+                <option value="visakhapatnam">Visakhapatnam</option>
+                <option value="guntur">Guntur</option>
+              </select>
+
+              <div style="margin-top:10px">
+                <label>Warranty</label>
+                <select id="warrantySelect">
+                  <option value="3">3 years</option>
+                  <option value="5">5 years (+20%)</option>
+                  <option value="10">10 years (+50%)</option>
+                </select>
+              </div>
+
+              <div style="margin-top:10px">
+                <label><input id="amcCheck" type="checkbox" /> Include AMC estimate</label>
+              </div>
+            </div>
+
+            <div style="margin-top:14px" class="control-row">
+              <button class="btn btn-ghost" onclick="prevStep()">Back</button>
+              <button class="btn btn-primary" onclick="nextStep()">Next</button>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div style="font-size:13px;color:var(--muted)">Price per sqft</div>
+                <div id="priceRange" class="price">₹850 – ₹1,500</div>
+              </div>
+              <div style="text-align:right">
+                <div style="font-size:13px;color:var(--muted)">Area</div>
+                <div id="areaDisplay" style="font-weight:700">24 sqft</div>
+              </div>
+            </div>
+
+            <div style="margin-top:12px">
+              <div class="line-item"><div>Material (estimate)</div><div id="lineMaterial" class="muted">₹20,400</div></div>
+              <div class="line-item"><div>Fabrication</div><div id="lineFabrication" class="muted">₹6,120</div></div>
+              <div class="line-item"><div>Electronics (LEDs)</div><div id="lineElectronics" class="muted">₹4,800</div></div>
+              <div class="line-item"><div>Installation</div><div id="lineInstall" class="muted">₹3,600</div></div>
+              <div class="line-item"><div>AMC (optional)</div><div id="lineAMC" class="muted">₹2,500</div></div>
+              <div class="line-item"><div>Subtotal</div><div id="lineSubtotal" class="muted">₹37,420</div></div>
+              <div class="line-item"><div>GST (18%)</div><div id="lineGst" class="muted">₹6,735</div></div>
+              <div style="display:flex;justify-content:space-between;padding-top:10px">
+                <div class="muted">Estimated total range</div>
+                <div id="totalRange" class="total">₹44,155 — ₹60,000</div>
+              </div>
+
+              <div style="margin-top:12px;display:flex;gap:8px">
+                <button class="btn btn-primary" onclick="saveQuote()">Save Quote</button>
+                <button class="btn btn-ghost" onclick="shareWhatsApp()">Share</button>
+              </div>
+
+              <div class="note" style="margin-top:10px">This is an initial estimate. Final quotes require a site visit.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Basic helpers & state same as index.html to keep behavior identical.
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const SERVICES = {
+      'led-shop': {min:850, max:1500},
+      'acp-hoarding': {min:1200, max:2500},
+      '3d-letters': {min:1500, max:4000},
+      'wayfinding': {min:800, max:1800},
+      'hospital': {min:900, max:2000},
+      'school': {min:800, max:1600}
+    };
+
+    let state = {
+      step: 1,
+      service: 'led-shop',
+      width: Number(document.getElementById('widthInput').value),
+      height: Number(document.getElementById('heightInput').value),
+      city: document.getElementById('citySelect').value,
+      warranty: document.getElementById('warrantySelect').value,
+      amc: !!document.getElementById('amcCheck').checked
+    };
+
+    function updateStepUI(){
+      const stepFill = document.getElementById('stepFill');
+      const percent = (state.step - 1) / 4 * 100;
+      stepFill.style.width = Math.max(8, percent) + '%';
+      document.querySelectorAll('#stepArea .step').forEach(el=>{
+        el.style.display = (parseInt(el.dataset.step,10) <= state.step) ? 'block' : 'none';
+      });
+    }
+    updateStepUI();
+
+    function openPlanner(prefill){
+      if(prefill && SERVICES[prefill]) {
+        state.service = prefill;
+        document.getElementById('serviceSelect').value = prefill;
+      }
+      document.getElementById('plannerBackdrop').style.display = 'flex';
+      document.getElementById('plannerBackdrop').setAttribute('aria-hidden','false');
+      state.step = 1; updateStepUI(); recalcAll();
+    }
+    function closePlanner(){
+      document.getElementById('plannerBackdrop').style.display = 'none';
+      document.getElementById('plannerBackdrop').setAttribute('aria-hidden','true');
+    }
+
+    function nextStep(){ if(state.step < 4) state.step++; else state.step = 4; updateStepUI(); }
+    function prevStep(){ if(state.step > 1) state.step--; updateStepUI(); }
+
+    function onServiceChange(){ state.service = document.getElementById('serviceSelect').value; recalcAll(); }
+    document.getElementById('widthInput').addEventListener('input',(e)=>{ state.width = Number(e.target.value||0); recalcAll();});
+    document.getElementById('heightInput').addEventListener('input',(e)=>{ state.height = Number(e.target.value||0); recalcAll();});
+    document.getElementById('citySelect').addEventListener('change',(e)=>{ state.city = e.target.value; recalcAll();});
+    document.getElementById('warrantySelect').addEventListener('change',(e)=>{ state.warranty = e.target.value; recalcAll();});
+    document.getElementById('amcCheck').addEventListener('change',(e)=>{ state.amc = e.target.checked; recalcAll();});
+
+    function recalcAll(){
+      const w = Number(state.width || 0);
+      const h = Number(state.height || 0);
+      const area = Math.max(0.01, Math.round((w * h) * 100) / 100);
+
+      const rates = SERVICES[state.service] || {min:850, max:1500};
+      const minRate = rates.min; const maxRate = rates.max;
+      const materialMin = Math.round(area * minRate); const materialMax = Math.round(area * maxRate);
+      const fabMin = Math.round(materialMin * 0.30); const fabMax = Math.round(materialMax * 0.30);
+      const electMin = Math.round(area * 200); const electMax = Math.round(area * 400);
+      const installMin = Math.round(area * 150); const installMax = Math.round(area * 300);
+      const amcMin = state.amc ? Math.round((materialMin + fabMin + electMin) * 0.12) : 0;
+      const amcMax = state.amc ? Math.round((materialMax + fabMax + electMax) * 0.12) : 0;
+      const cityMult = (state.city === 'hyderabad') ? 1.00 : 1.05;
+      const warrantyMult = (state.warranty === '3') ? 1.00 : (state.warranty === '5') ? 1.20 : 1.50;
+
+      const subtotalMin = Math.round((materialMin + fabMin + electMin + installMin + amcMin) * cityMult);
+      const subtotalMax = Math.round((materialMax + fabMax + electMax + installMax + amcMax) * cityMult);
+      const gstMin = Math.round(subtotalMin * 0.18); const gstMax = Math.round(subtotalMax * 0.18);
+      const totalMin = Math.round((subtotalMin + gstMin) * warrantyMult); const totalMax = Math.round((subtotalMax + gstMax) * warrantyMult);
+
+      document.getElementById('priceRange').textContent = `₹${minRate.toLocaleString()} – ₹${maxRate.toLocaleString()} / sqft`;
+      document.getElementById('areaDisplay').textContent = `${area.toLocaleString()} sqft`;
+
+      document.getElementById('lineMaterial').textContent = `₹${materialMin.toLocaleString()} — ₹${materialMax.toLocaleString()}`;
+      document.getElementById('lineFabrication').textContent = `₹${fabMin.toLocaleString()} — ₹${fabMax.toLocaleString()}`;
+      document.getElementById('lineElectronics').textContent = `₹${electMin.toLocaleString()} — ₹${electMax.toLocaleString()}`;
+      document.getElementById('lineInstall').textContent = `₹${installMin.toLocaleString()} — ₹${installMax.toLocaleString()}`;
+      document.getElementById('lineAMC').textContent = `₹${amcMin.toLocaleString()} — ₹${amcMax.toLocaleString()}`;
+      document.getElementById('lineSubtotal').textContent = `₹${subtotalMin.toLocaleString()} — ₹${subtotalMax.toLocaleString()}`;
+      document.getElementById('lineGst').textContent = `₹${gstMin.toLocaleString()} — ₹${gstMax.toLocaleString()}`;
+      document.getElementById('totalRange').textContent = `₹${totalMin.toLocaleString()} — ₹${totalMax.toLocaleString()}`;
+    }
+
+    function saveQuote(){
+      const payload = { createdAt: (new Date()).toISOString(), service: state.service, width: state.width, height: state.height, city: state.city, warranty: state.warranty, amc: state.amc };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = `vsign-quote-${Date.now()}.json`; a.click(); URL.revokeObjectURL(url);
+      alert('Quote saved to your computer (JSON). Use Share for WhatsApp.');
+    }
+
+    function shareWhatsApp(){
+      const text = encodeURIComponent(`Estimate from V SIGN:
+Service: ${state.service}
+Size: ${state.width}ft x ${state.height}ft
+Check estimated range on our site.`);
+      window.open(`https://wa.me/?text=${text}`, '_blank');
+    }
+
+    // initialize
+    recalcAll();
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+  </script>
 </body>
 </html>

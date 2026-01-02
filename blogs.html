@@ -1,309 +1,304 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blog — V SIGN | Signage, Design & Installation Insights</title>
-  <meta name="description" content="Articles about signage design, budgets, installation tips and case studies across Andhra Pradesh & Telangana." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <!-- shared planner CSS -->
-  <link rel="stylesheet" href="assets/planner/planner.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insights & Guides — V SIGN</title>
 
-  <style>
-    :root{
-      --primary:#0B3D91;
-      --accent:#FFB100;
-      --muted:#6B7280;
-      --bg:#FBFDFF;
-      --card:#FFFFFF;
-      --radius:14px;
-      --shadow: 0 12px 30px rgba(12,32,63,0.06);
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0f172a;-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{background:#fff;border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:60}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#0A2E70);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:Poppins}
-    .hero{padding:40px 0 18px;background:linear-gradient(180deg, rgba(11,61,145,0.03), rgba(255,191,0,0.01));border-bottom:1px solid rgba(11,61,145,0.02)}
-    .hero h1{font-family:Poppins;font-size:30px;margin:0;color:var(--primary)}
-    .hero h2{margin-top:8px;font-size:16px;color:#0f172a}
-    .hero h3{margin-top:6px;font-size:14px;color:var(--muted);font-weight:600}
-    .grid-3{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start;margin-top:20px}
-    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)}
-    .search{display:flex;gap:8px;align-items:center}
-    .search input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06)}
-    .post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
-    .post-card{border-radius:12px;overflow:hidden;border:1px solid rgba(11,61,145,0.03);background:linear-gradient(180deg,#fff,#fbfdff)}
-    .post-thumb{width:100%;height:160px;object-fit:cover;display:block}
-    .post-body{padding:12px}
-    .muted{color:var(--muted);font-size:13px}
-    .tag{display:inline-block;background:rgba(11,61,145,0.06);color:var(--primary);padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px;margin-right:6px}
-    .pagination{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:18px}
-    .page-btn{padding:8px 10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:white;cursor:pointer}
-    footer{margin-top:36px;padding:28px 0;background:#fff;border-top:1px solid rgba(15,23,42,0.04)}
-    @media (max-width:980px){.grid-3{grid-template-columns:1fr}.post-grid{grid-template-columns:1fr}}
-  </style>
+<meta name="description" content="Guides and insights on signage planning, pricing, materials and installation. Written to help businesses understand costs before making decisions.">
 
-  <!-- Example structured data for blog homepage (limited sample) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Blog",
-    "name":"V SIGN Blog",
-    "url":"https://yourdomain.com/blogs.html",
-    "description":"Articles and guides about signage, budgets, and installation across AP & Telangana."
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#fbfbfd;
+  --text:#0f172a;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --accent:#0f172a;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* Header */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:72px;
+}
+
+.brand{
+  font-weight:600;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:15px;
+}
+
+nav a:hover{
+  color:var(--text);
+}
+
+/* Hero */
+.hero{
+  padding:88px 0 56px;
+}
+
+.hero h1{
+  font-size:38px;
+  font-weight:600;
+}
+
+.hero p{
+  margin-top:18px;
+  font-size:18px;
+  color:var(--muted);
+  max-width:720px;
+}
+
+/* Section */
+.section{
+  padding:64px 0;
+  border-top:1px solid var(--border);
+}
+
+/* Blog list */
+.blog-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:32px;
+}
+
+.post{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:32px;
+}
+
+.post h2{
+  margin:0;
+  font-size:22px;
+  font-weight:600;
+}
+
+.post p{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:16px;
+  max-width:760px;
+}
+
+.post-meta{
+  margin-top:12px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+.post a{
+  display:inline-block;
+  margin-top:20px;
+  text-decoration:none;
+  color:var(--accent);
+  font-weight:500;
+}
+
+/* CTA */
+.cta-box{
+  margin-top:64px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:40px;
+  text-align:center;
+}
+
+.cta-box h3{
+  margin:0;
+  font-size:26px;
+  font-weight:600;
+}
+
+.cta-box p{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:16px;
+}
+
+.cta-primary{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 26px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:10px;
+  font-weight:500;
+  text-decoration:none;
+}
+
+/* Footer */
+footer{
+  padding:48px 0;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  font-size:14px;
+}
+
+.footer-grid a{
+  display:block;
+  color:var(--muted);
+  text-decoration:none;
+  margin-top:8px;
+}
+
+.footer-grid a:hover{
+  color:var(--text);
+}
+
+@media(max-width:900px){
+  .footer-grid{
+    grid-template-columns:1fr;
   }
-  </script>
+  .hero h1{
+    font-size:34px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">VS</div>
-        <div>
-          <div style="font-weight:700;color:var(--primary);font-family:Poppins">V SIGN</div>
-          <div class="muted" style="font-size:12px">Premium LED & 3D Signage</div>
-        </div>
-      </div>
 
-      <nav style="display:flex;gap:12px;align-items:center">
-        <a href="index.html" class="muted">Home</a>
-        <a href="services.html" class="muted">Services</a>
-        <a href="blogs.html" class="muted">Blog</a>
-        <a href="contact.html" class="muted">Contact</a>
-        <button onclick="openPlanner()" class="btn" style="background:var(--accent);border-radius:12px;padding:10px 14px;font-weight:700">Get Quote</button>
-      </nav>
+<header>
+  <div class="container nav">
+    <div class="brand">V SIGN</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero container">
+  <h1>Insights & guides</h1>
+  <p>
+    Practical articles written to help businesses understand
+    signage planning, pricing and decision-making —
+    without sales noise.
+  </p>
+</section>
+
+<section class="section">
+  <div class="container blog-list">
+
+    <article class="post">
+      <h2>How to estimate signage costs realistically</h2>
+      <p>
+        A step-by-step explanation of how signage pricing works,
+        what factors influence cost, and how to avoid surprises
+        during vendor discussions.
+      </p>
+      <div class="post-meta">
+        6 min read · Budget planning
+      </div>
+      <a href="blog-detail.html">Read article</a>
+    </article>
+
+    <article class="post">
+      <h2>LED vs ACP signage: choosing the right option</h2>
+      <p>
+        Understanding the practical differences between LED boards
+        and ACP hoardings helps businesses make better long-term decisions.
+      </p>
+      <div class="post-meta">
+        5 min read · Product comparison
+      </div>
+      <a href="blog-detail.html">Read article</a>
+    </article>
+
+    <article class="post">
+      <h2>Why city and location affect signage pricing</h2>
+      <p>
+        Installation access, permissions, and logistics vary by city.
+        This guide explains how location impacts final signage cost.
+      </p>
+      <div class="post-meta">
+        4 min read · Location factors
+      </div>
+      <a href="blog-detail.html">Read article</a>
+    </article>
+
+    <div class="cta-box">
+      <h3>Want to see how this applies to your project?</h3>
+      <p>
+        Use the estimator to understand realistic signage budgets
+        before speaking with vendors.
+      </p>
+      <a href="app.html" class="cta-primary">
+        Estimate your signage budget
+      </a>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Insights & Guides — V SIGN Blog</h1>
-        <h2>Practical advice on signage selection, budgeting and installation</h2>
-        <h3>Actionable posts for business owners and builders across Andhra Pradesh & Telangana</h3>
-      </div>
-    </section>
+  </div>
+</section>
 
-    <section class="container" style="padding:20px 0">
-      <div class="grid-3">
-        <div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <h2 style="margin:0;font-size:20px">Latest posts</h2>
-              <div class="muted" style="margin-top:6px">Search or filter the blog archive</div>
-            </div>
+</main>
 
-            <div class="search" style="width:360px">
-              <input id="searchInput" placeholder="Search posts, e.g., 'budget', 'ACP'..." />
-              <select id="tagFilter">
-                <option value="">All tags</option>
-                <option value="budget">Budget</option>
-                <option value="installation">Installation</option>
-                <option value="case-study">Case study</option>
-                <option value="materials">Materials</option>
-              </select>
-            </div>
-          </div>
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>V SIGN</strong>
+      <p style="margin-top:10px;color:var(--muted)">
+        Transparent signage estimation platform.
+      </p>
+    </div>
 
-          <div id="posts" class="post-grid" style="margin-top:14px">
-            <!-- JS will populate -->
-          </div>
+    <div>
+      <strong>Explore</strong>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="faq.html">FAQ</a>
+    </div>
 
-          <div class="pagination" id="pagination"></div>
-        </div>
+    <div>
+      <strong>Get started</strong>
+      <a href="app.html">Estimate budget</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
 
-        <aside>
-          <div class="card">
-            <div style="font-weight:700">Popular topics</div>
-            <div style="margin-top:10px">
-              <div><a href="#" onclick="filterByTag('budget');return false" class="tag">Budget</a></div>
-              <div style="margin-top:8px"><a href="#" onclick="filterByTag('installation');return false" class="tag">Installation</a></div>
-              <div style="margin-top:8px"><a href="#" onclick="filterByTag('materials');return false" class="tag">Materials</a></div>
-            </div>
-          </div>
-
-          <div class="card" style="margin-top:14px">
-            <div style="font-weight:700">Subscribe</div>
-            <p class="muted" style="margin-top:8px">Get monthly guides and case studies relevant to AP & Telangana.</p>
-            <div style="margin-top:8px;display:flex;gap:8px">
-              <input id="subscribeEmail" placeholder="you@company.com" style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06)" />
-              <button class="page-btn" onclick="subscribe()">Subscribe</button>
-            </div>
-            <div id="subscribeMsg" class="muted" style="margin-top:8px"></div>
-          </div>
-
-          <div class="card" style="margin-top:14px">
-            <div style="font-weight:700">Planner quick link</div>
-            <p class="muted" style="margin-top:8px">Open the estimator anytime from the blog.</p>
-            <button class="page-btn" onclick="openPlanner()">Open Estimator</button>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-        <div>
-          <div style="font-weight:700;color:var(--primary)">V SIGN</div>
-          <div class="muted">End-to-end signage solutions — design, fabricate & install.</div>
-        </div>
-        <div style="text-align:right">
-          <div class="muted">Support: hello@vsign.example</div>
-          <div class="muted">Phone: +91 99XXXXXXX</div>
-        </div>
-        <div style="width:100%;text-align:center;margin-top:12px;color:var(--muted);font-size:13px">© <span id="yr"></span> V SIGN. All rights reserved.</div>
-      </div>
-    </footer>
-  </main>
-
-  <!-- planner script -->
-  <script src="assets/planner/planner.js"></script>
-
-  <script>
-    // dynamic sample posts (replace with your CMS or static files)
-    const POSTS = [
-      {
-        id: 'how-to-budget-led-sign',
-        title: 'How to budget for an LED signboard: a practical guide',
-        date: '2025-01-02',
-        author: 'Henry Paul',
-        tags: ['budget','materials'],
-        excerpt: 'A step-by-step method to estimate realistic budgets for LED shop boards including material and installation considerations.',
-        image: 'assets/images/blog1.jpg'
-      },
-      {
-        id: 'acp-hoarding-checklist',
-        title: 'ACP hoarding checklist: permits, wind loads & installation tips',
-        date: '2024-12-10',
-        author: 'V SIGN Team',
-        tags: ['installation','case-study'],
-        excerpt: 'Before installing a large ACP hoarding, ensure you cover structural checks, permits, and safety – read our checklist.',
-        image: 'assets/images/blog2.jpg'
-      },
-      {
-        id: '3d-letters-care',
-        title: '3D letters: finish options and maintenance tips',
-        date: '2024-11-18',
-        author: 'Design Team',
-        tags: ['materials','maintenance'],
-        excerpt: 'From stainless to brass, learn which finishes last longer and how maintenance affects long-term costs.',
-        image: 'assets/images/blog3.jpg'
-      },
-      {
-        id: 'case-study-local-business',
-        title: 'Case study: How a local retailer increased footfall with a new storefront sign',
-        date: '2024-10-05',
-        author: 'V SIGN',
-        tags: ['case-study','budget'],
-        excerpt: 'Real world case study demonstrating the ROI of investing in well-designed signage.',
-        image: 'assets/images/blog4.jpg'
-      },
-      {
-        id: 'installation-safety',
-        title: 'Installation safety essentials for rooftop signage',
-        date: '2024-09-20',
-        author: 'Safety Team',
-        tags: ['installation','safety'],
-        excerpt: 'Key safety measures and equipment required for rooftop and high-rise signage installation.',
-        image: 'assets/images/blog5.jpg'
-      }
-    ];
-
-    // client-side pagination & filtering
-    const PER_PAGE = 4;
-    let currentPage = 1;
-    let activeFilter = '';
-    const postsEl = document.getElementById('posts');
-    const paginationEl = document.getElementById('pagination');
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-    function renderPosts() {
-      const q = document.getElementById('searchInput').value.trim().toLowerCase();
-      const tag = document.getElementById('tagFilter').value;
-      activeFilter = tag;
-      let filtered = POSTS.filter(p => {
-        if (tag && !p.tags.includes(tag)) return false;
-        if (!q) return true;
-        return (p.title + ' ' + p.excerpt + ' ' + p.tags.join(' ')).toLowerCase().includes(q);
-      });
-
-      const total = filtered.length;
-      const pages = Math.max(1, Math.ceil(total / PER_PAGE));
-      if (currentPage > pages) currentPage = pages;
-      const start = (currentPage -1) * PER_PAGE;
-      const pagePosts = filtered.slice(start, start + PER_PAGE);
-
-      postsEl.innerHTML = pagePosts.map(p => `
-        <article class="post-card">
-          <img src="${p.image}" class="post-thumb" alt="${p.title}" onerror="this.style.opacity=.5">
-          <div class="post-body">
-            <div style="display:flex;justify-content:space-between;align-items:start">
-              <div>
-                <h3 style="margin:0 0 6px 0;font-size:18px">${p.title}</h3>
-                <div class="muted" style="font-size:13px">by ${p.author} • ${p.date}</div>
-              </div>
-              <div style="text-align:right">
-                ${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}
-              </div>
-            </div>
-            <p class="muted" style="margin-top:10px">${p.excerpt}</p>
-            <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center">
-              <a href="blog-detail.html#${p.id}" class="page-btn">Read more</a>
-              <div style="display:flex;gap:8px">
-                <button class="page-btn" onclick="openPlanner('${mapTagToService(p.tags[0])}')">Estimate</button>
-              </div>
-            </div>
-          </div>
-        </article>
-      `).join('');
-
-      // pagination
-      paginationEl.innerHTML = '';
-      for (let i=1;i<=pages;i++){
-        const btn = document.createElement('button');
-        btn.className = 'page-btn';
-        btn.textContent = i;
-        if (i === currentPage) btn.style.fontWeight = '700';
-        btn.addEventListener('click', ()=> { currentPage = i; renderPosts(); });
-        paginationEl.appendChild(btn);
-      }
-    }
-
-    function mapTagToService(tag){
-      // small heuristic: map tag to likely service so Estimate prefill is helpful
-      if (!tag) return '';
-      tag = tag.toLowerCase();
-      if (tag === 'materials' || tag === 'budget') return 'led-shop';
-      if (tag === 'installation' || tag === 'safety') return 'acp-hoarding';
-      if (tag === 'case-study') return '3d-letters';
-      return '';
-    }
-
-    // filters
-    document.getElementById('searchInput').addEventListener('input', ()=> { currentPage=1; renderPosts(); });
-    document.getElementById('tagFilter').addEventListener('change', ()=> { currentPage=1; renderPosts(); });
-    function filterByTag(t){ document.getElementById('tagFilter').value = t; currentPage = 1; renderPosts(); }
-
-    // subscribe (basic client-side)
-    function subscribe(){
-      const email = document.getElementById('subscribeEmail').value.trim();
-      const msg = document.getElementById('subscribeMsg');
-      if (!email || !email.includes('@')) { msg.textContent = 'Please enter a valid email.'; return; }
-      msg.textContent = 'Subscribed — we will email monthly updates.';
-      document.getElementById('subscribeEmail').value = '';
-    }
-
-    // expose small helpers
-    window.filterByTag = filterByTag;
-    window.subscribe = subscribe;
-
-    // initial render
-    renderPosts();
-  </script>
 </body>
 </html>

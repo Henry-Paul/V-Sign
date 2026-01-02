@@ -1,590 +1,309 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signage Blogs & Guides | V SIGN - LED Signage Tips, Installation Guides</title>
-    <meta name="description" content="Expert guides on LED signage, installation tips, maintenance, and industry trends. Learn about signage costs, materials, and best practices in Hyderabad, Vijayawada, Vizag.">
-    
-    <!-- Structured Data for Blog -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Blog",
-        "name": "V SIGN Signage Insights",
-        "description": "Expert articles on signage manufacturing, installation, and maintenance",
-        "publisher": {
-            "@type": "Organization",
-            "name": "V SIGN",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://vsign.com/assets/images/logo.png"
-            }
-        },
-        "blogPost": [
-            {
-                "@type": "BlogPosting",
-                "headline": "How to Choose the Right LED Signage for Your Business",
-                "datePublished": "2024-03-15",
-                "author": {
-                    "@type": "Person",
-                    "name": "Rakesh Adepu"
-                }
-            },
-            {
-                "@type": "BlogPosting",
-                "headline": "Terrace Signage: Wind Load Calculations & Safety Standards",
-                "datePublished": "2024-03-10",
-                "author": {
-                    "@type": "Person",
-                    "name": "Ashwini Adepu"
-                }
-            }
-        ]
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog — V SIGN | Signage, Design & Installation Insights</title>
+  <meta name="description" content="Articles about signage design, budgets, installation tips and case studies across Andhra Pradesh & Telangana." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <!-- shared planner CSS -->
+  <link rel="stylesheet" href="assets/planner/planner.css" />
+
+  <style>
+    :root{
+      --primary:#0B3D91;
+      --accent:#FFB100;
+      --muted:#6B7280;
+      --bg:#FBFDFF;
+      --card:#FFFFFF;
+      --radius:14px;
+      --shadow: 0 12px 30px rgba(12,32,63,0.06);
     }
-    </script>
-    
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/blogs.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:#0f172a;-webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{background:#fff;border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:60}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#0A2E70);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:Poppins}
+    .hero{padding:40px 0 18px;background:linear-gradient(180deg, rgba(11,61,145,0.03), rgba(255,191,0,0.01));border-bottom:1px solid rgba(11,61,145,0.02)}
+    .hero h1{font-family:Poppins;font-size:30px;margin:0;color:var(--primary)}
+    .hero h2{margin-top:8px;font-size:16px;color:#0f172a}
+    .hero h3{margin-top:6px;font-size:14px;color:var(--muted);font-weight:600}
+    .grid-3{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start;margin-top:20px}
+    .card{background:var(--card);padding:14px;border-radius:12px;box-shadow:var(--shadow)}
+    .search{display:flex;gap:8px;align-items:center}
+    .search input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06)}
+    .post-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:14px}
+    .post-card{border-radius:12px;overflow:hidden;border:1px solid rgba(11,61,145,0.03);background:linear-gradient(180deg,#fff,#fbfdff)}
+    .post-thumb{width:100%;height:160px;object-fit:cover;display:block}
+    .post-body{padding:12px}
+    .muted{color:var(--muted);font-size:13px}
+    .tag{display:inline-block;background:rgba(11,61,145,0.06);color:var(--primary);padding:6px 8px;border-radius:999px;font-weight:700;font-size:12px;margin-right:6px}
+    .pagination{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:18px}
+    .page-btn{padding:8px 10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);background:white;cursor:pointer}
+    footer{margin-top:36px;padding:28px 0;background:#fff;border-top:1px solid rgba(15,23,42,0.04)}
+    @media (max-width:980px){.grid-3{grid-template-columns:1fr}.post-grid{grid-template-columns:1fr}}
+  </style>
+
+  <!-- Example structured data for blog homepage (limited sample) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Blog",
+    "name":"V SIGN Blog",
+    "url":"https://yourdomain.com/blogs.html",
+    "description":"Articles and guides about signage, budgets, and installation across AP & Telangana."
+  }
+  </script>
 </head>
 <body>
-    <!-- Contact Bar -->
-    <div class="contact-bar">
-        <div class="container">
-            <div class="contact-info">
-                <a href="tel:+919848012345"><i class="fas fa-phone"></i> +91 98480 12345</a>
-                <a href="mailto:info@vsign.com"><i class="fas fa-envelope"></i> info@vsign.com</a>
-                <span><i class="fas fa-map-marker-alt"></i> Hyderabad • Vijayawada • Vizag</span>
-            </div>
-            <div class="contact-actions">
-                <a href="https://wa.me/919848012345" class="whatsapp-btn" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
-                </a>
-                <button class="live-chat-btn" onclick="openChat()">
-                    <i class="fas fa-comment"></i> Live Chat
-                </button>
-            </div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">VS</div>
+        <div>
+          <div style="font-weight:700;color:var(--primary);font-family:Poppins">V SIGN</div>
+          <div class="muted" style="font-size:12px">Premium LED & 3D Signage</div>
         </div>
+      </div>
+
+      <nav style="display:flex;gap:12px;align-items:center">
+        <a href="index.html" class="muted">Home</a>
+        <a href="services.html" class="muted">Services</a>
+        <a href="blogs.html" class="muted">Blog</a>
+        <a href="contact.html" class="muted">Contact</a>
+        <button onclick="openPlanner()" class="btn" style="background:var(--accent);border-radius:12px;padding:10px 14px;font-weight:700">Get Quote</button>
+      </nav>
     </div>
+  </header>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <h1>V SIGN</h1>
-                <span>Premium Signage Solutions</span>
-            </a>
-            
-            <button class="mobile-menu-btn" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <div class="nav-menu" id="navMenu">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="services.html" class="nav-link">Services</a>
-                <a href="budget-planner.html" class="nav-link">Budget Planner</a>
-                <a href="blogs.html" class="nav-link active">Blogs</a>
-                <a href="faq.html" class="nav-link">FAQ</a>
-                <a href="contact.html" class="nav-link">Contact</a>
-                <a href="budget-planner.html" class="btn-primary">Get Quote</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Blogs Hero -->
-    <section class="blogs-hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Signage Insights & Expert Guides</h1>
-                <p>Learn about LED signage, installation best practices, maintenance tips, and industry trends</p>
-                <div class="search-box">
-                    <input type="text" placeholder="Search blog posts..." id="blogSearch">
-                    <button onclick="searchBlogs()"><i class="fas fa-search"></i></button>
-                </div>
-            </div>
-        </div>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Insights & Guides — V SIGN Blog</h1>
+        <h2>Practical advice on signage selection, budgeting and installation</h2>
+        <h3>Actionable posts for business owners and builders across Andhra Pradesh & Telangana</h3>
+      </div>
     </section>
 
-    <!-- Categories -->
-    <section class="blog-categories">
-        <div class="container">
-            <div class="categories-nav">
-                <button class="category-btn active" data-category="all">All Topics</button>
-                <button class="category-btn" data-category="guide">Guides</button>
-                <button class="category-btn" data-category="technical">Technical</button>
-                <button class="category-btn" data-category="design">Design</button>
-                <button class="category-btn" data-category="case-study">Case Studies</button>
-                <button class="category-btn" data-category="maintenance">Maintenance</button>
-                <button class="category-btn" data-category="trends">Trends</button>
-                <button class="category-btn" data-category="materials">Materials</button>
+    <section class="container" style="padding:20px 0">
+      <div class="grid-3">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <h2 style="margin:0;font-size:20px">Latest posts</h2>
+              <div class="muted" style="margin-top:6px">Search or filter the blog archive</div>
             </div>
+
+            <div class="search" style="width:360px">
+              <input id="searchInput" placeholder="Search posts, e.g., 'budget', 'ACP'..." />
+              <select id="tagFilter">
+                <option value="">All tags</option>
+                <option value="budget">Budget</option>
+                <option value="installation">Installation</option>
+                <option value="case-study">Case study</option>
+                <option value="materials">Materials</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="posts" class="post-grid" style="margin-top:14px">
+            <!-- JS will populate -->
+          </div>
+
+          <div class="pagination" id="pagination"></div>
         </div>
+
+        <aside>
+          <div class="card">
+            <div style="font-weight:700">Popular topics</div>
+            <div style="margin-top:10px">
+              <div><a href="#" onclick="filterByTag('budget');return false" class="tag">Budget</a></div>
+              <div style="margin-top:8px"><a href="#" onclick="filterByTag('installation');return false" class="tag">Installation</a></div>
+              <div style="margin-top:8px"><a href="#" onclick="filterByTag('materials');return false" class="tag">Materials</a></div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <div style="font-weight:700">Subscribe</div>
+            <p class="muted" style="margin-top:8px">Get monthly guides and case studies relevant to AP & Telangana.</p>
+            <div style="margin-top:8px;display:flex;gap:8px">
+              <input id="subscribeEmail" placeholder="you@company.com" style="flex:1;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06)" />
+              <button class="page-btn" onclick="subscribe()">Subscribe</button>
+            </div>
+            <div id="subscribeMsg" class="muted" style="margin-top:8px"></div>
+          </div>
+
+          <div class="card" style="margin-top:14px">
+            <div style="font-weight:700">Planner quick link</div>
+            <p class="muted" style="margin-top:8px">Open the estimator anytime from the blog.</p>
+            <button class="page-btn" onclick="openPlanner()">Open Estimator</button>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- Featured Post -->
-    <section class="featured-post">
-        <div class="container">
-            <div class="featured-content">
-                <div class="featured-image">
-                    <img src="assets/images/featured-blog.jpg" alt="LED Signage Installation Guide" loading="lazy">
-                    <div class="featured-badge">
-                        <i class="fas fa-star"></i> Featured
-                    </div>
-                </div>
-                <div class="featured-info">
-                    <span class="post-category">Complete Guide</span>
-                    <h2>How to Choose the Right LED Signage for Your Business in Hyderabad</h2>
-                    <p class="post-excerpt">Complete guide to selecting the perfect signage based on location, material, and visibility requirements for businesses in Hyderabad, Vijayawada, and Vizag.</p>
-                    
-                    <div class="post-meta">
-                        <div class="author">
-                            <img src="assets/images/rakesh.jpg" alt="Rakesh Adepu">
-                            <div>
-                                <div class="author-name">Rakesh Adepu</div>
-                                <div class="post-date">March 15, 2024 • 8 min read</div>
-                            </div>
-                        </div>
-                        <a href="blog-detail.html" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
+    <footer>
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="font-weight:700;color:var(--primary)">V SIGN</div>
+          <div class="muted">End-to-end signage solutions — design, fabricate & install.</div>
         </div>
-    </section>
-
-    <!-- Blog Posts Grid -->
-    <section class="blog-posts">
-        <div class="container">
-            <div class="posts-grid" id="postsGrid">
-                <!-- Post 1 -->
-                <article class="blog-card" data-category="technical">
-                    <div class="card-image">
-                        <img src="assets/images/blog1.jpg" alt="Terrace Signage Wind Load" loading="lazy">
-                        <span class="category-badge">Technical</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Terrace Signage: Wind Load Calculations & Safety Standards</h3>
-                        <p class="excerpt">Understanding the engineering behind safe and durable rooftop signage installations for high-rise buildings.</p>
-                        
-                        <div class="card-meta">
-                            <div class="meta-left">
-                                <span><i class="fas fa-user"></i> Ashwini Adepu</span>
-                                <span><i class="fas fa-clock"></i> 8 min read</span>
-                            </div>
-                            <span class="date">Mar 10, 2024</span>
-                        </div>
-                        
-                        <a href="blog-detail.html" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Post 2 -->
-                <article class="blog-card" data-category="design">
-                    <div class="card-image">
-                        <img src="assets/images/blog2.jpg" alt="3D Letters vs Flat Signage" loading="lazy">
-                        <span class="category-badge">Design</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>3D Letters vs Flat Signage: Which is Better for Branding?</h3>
-                        <p class="excerpt">Comparing dimensional signage with traditional flat signs for maximum brand impact and visibility.</p>
-                        
-                        <div class="card-meta">
-                            <div class="meta-left">
-                                <span><i class="fas fa-user"></i> V SIGN Team</span>
-                                <span><i class="fas fa-clock"></i> 6 min read</span>
-                            </div>
-                            <span class="date">Mar 5, 2024</span>
-                        </div>
-                        
-                        <a href="blog-detail.html" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Post 3 -->
-                <article class="blog-card" data-category="case-study">
-                    <div class="card-image">
-                        <img src="assets/images/blog3.jpg" alt="Hospital Wayfinding Signage" loading="lazy">
-                        <span class="category-badge">Case Study</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Hospital Wayfinding: Improving Patient Experience with Signage</h3>
-                        <p class="excerpt">How strategic signage reduces stress and improves navigation in medical facilities across Andhra Pradesh.</p>
-                        
-                        <div class="card-meta">
-                            <div class="meta-left">
-                                <span><i class="fas fa-user"></i> Rakesh Adepu</span>
-                                <span><i class="fas fa-clock"></i> 7 min read</span>
-                            </div>
-                            <span class="date">Feb 28, 2024</span>
-                        </div>
-                        
-                        <a href="blog-detail.html" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Post 4 -->
-                <article class="blog-card" data-category="maintenance">
-                    <div class="card-image">
-                        <img src="assets/images/blog4.jpg" alt="LED Signage Maintenance" loading="lazy">
-                        <span class="category-badge">Maintenance</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>LED Signage Maintenance: AMC Plans & Cost Saving Tips</h3>
-                        <p class="excerpt">Extend the life of your signage with proper maintenance and annual service contracts. Learn cost-saving strategies.</p>
-                        
-                        <div class="card-meta">
-                            <div class="meta-left">
-                                <span><i class="fas fa-user"></i> V SIGN Team</span>
-                                <span><i class="fas fa-clock"></i> 4 min read</span>
-                            </div>
-                            <span class="date">Feb 20, 2024</span>
-                        </div>
-                        
-                        <a href="blog-detail.html" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Post 5 -->
-                <article class="blog-card" data-category="trends">
-                    <div class="card-image">
-                        <img src="assets/images/blog5.jpg" alt="Shop Signage Trends 2024" loading="lazy">
-                        <span class="category-badge">Trends</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Shop Signage Trends 2024: What Customers Notice First</h3>
-                        <p class="excerpt">Latest trends in retail signage design that drive foot traffic and sales for shops in Hyderabad and Vijayawada.</p>
-                        
-                        <div class="card-meta">
-                            <div class="meta-left">
-                                <span><i class="fas fa-user"></i> Ashwini Adepu</span>
-                                <span><i class="fas fa-clock"></i> 5 min read</span>
-                            </div>
-                            <span class="date">Feb 15, 2024</span>
-                        </div>
-                        
-                        <a href="blog-detail.html" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Post 6 -->
-                <article class="blog-card" data-category="materials">
-                    <div class="card-image">
-                        <img src="assets/images/blog6.jpg" alt="Signage Materials Comparison" loading="lazy">
-                        <span class="category-badge">Materials</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>ACP vs Stainless Steel vs Acrylic: Which Material is Best?</h3>
-                        <p class="excerpt">Detailed comparison of signage materials for durability, cost, and visual appeal in different environments.</p>
-                        
-                        <div class="card-meta">
-                            <div class="meta-left">
-                                <span><i class="fas fa-user"></i> V SIGN Team</span>
-                                <span><i class="fas fa-clock"></i> 7 min read</span>
-                            </div>
-                            <span class="date">Feb 10, 2024</span>
-                        </div>
-                        
-                        <a href="blog-detail.html" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Post 7 -->
-                <article class="blog-card" data-category="guide">
-                    <div class="card-image">
-                        <img src="assets/images/blog7.jpg" alt="Signage Permits Hyderabad" loading="lazy">
-                        <span class="category-badge">Guide</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>Signage Permits in Hyderabad: Complete Guide 2024</h3>
-                        <p class="excerpt">Everything you need to know about signage permits, regulations, and approval processes in Hyderabad.</p>
-                        
-                        <div class="card-meta">
-                            <div class="meta-left">
-                                <span><i class="fas fa-user"></i> Rakesh Adepu</span>
-                                <span><i class="fas fa-clock"></i> 10 min read</span>
-                            </div>
-                            <span class="date">Feb 5, 2024</span>
-                        </div>
-                        
-                        <a href="blog-detail.html" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <!-- Post 8 -->
-                <article class="blog-card" data-category="technical">
-                    <div class="card-image">
-                        <img src="assets/images/blog8.jpg" alt="LED Power Consumption" loading="lazy">
-                        <span class="category-badge">Technical</span>
-                    </div>
-                    <div class="card-content">
-                        <h3>LED Power Consumption: Calculating Your Signage Electricity Costs</h3>
-                        <p class="excerpt">Learn how to calculate and optimize electricity consumption for your LED signage to reduce operational costs.</p>
-                        
-                        <div class="card-meta">
-                            <div class="meta-left">
-                                <span><i class="fas fa-user"></i> V SIGN Team</span>
-                                <span><i class="fas fa-clock"></i> 6 min read</span>
-                            </div>
-                            <span class="date">Jan 28, 2024</span>
-                        </div>
-                        
-                        <a href="blog-detail.html" class="card-link">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-
-            <!-- Load More -->
-            <div class="load-more">
-                <button class="btn-secondary" onclick="loadMorePosts()">
-                    <i class="fas fa-plus"></i> Load More Articles
-                </button>
-            </div>
+        <div style="text-align:right">
+          <div class="muted">Support: hello@vsign.example</div>
+          <div class="muted">Phone: +91 99XXXXXXX</div>
         </div>
-    </section>
-
-    <!-- SEO Content Section -->
-    <section class="seo-content">
-        <div class="container">
-            <div class="seo-section">
-                <h2>Signage Manufacturing Expertise in Andhra Pradesh & Telangana</h2>
-                
-                <div class="content-grid">
-                    <div class="content-block">
-                        <h3>Why Choose In-House Signage Manufacturing?</h3>
-                        <p>At V SIGN, we maintain complete control over the quality and timeline of your signage project through our in-house manufacturing facility in Hyderabad. Unlike outsourcing companies, we handle every stage internally:</p>
-                        
-                        <ul>
-                            <li><strong>Quality Control:</strong> Direct supervision of material selection and fabrication processes</li>
-                            <li><strong>Faster Turnaround:</strong> 7-9 working days for most projects instead of industry standard 15-20 days</li>
-                            <li><strong>Custom Solutions:</strong> Ability to create unique designs and modifications on-site</li>
-                            <li><strong>Cost Efficiency:</strong> No middleman markups, resulting in better pricing for customers</li>
-                            <li><strong>Warranty Assurance:</strong> Direct accountability for 3, 5, and 10-year warranty coverage</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="content-block">
-                        <h3>Signage Solutions for Every Business Type</h3>
-                        <p>We serve diverse industries across Andhra Pradesh and Telangana with specialized signage solutions:</p>
-                        
-                        <div class="industry-list">
-                            <div class="industry">
-                                <i class="fas fa-building"></i>
-                                <div>
-                                    <h4>Commercial & Office Buildings</h4>
-                                    <p>Corporate identity signage, lobby signs, directory boards</p>
-                                </div>
-                            </div>
-                            <div class="industry">
-                                <i class="fas fa-hospital"></i>
-                                <div>
-                                    <h4>Healthcare Facilities</h4>
-                                    <p>Wayfinding systems, emergency signage, department signs</p>
-                                </div>
-                            </div>
-                            <div class="industry">
-                                <i class="fas fa-hotel"></i>
-                                <div>
-                                    <h4>Hospitality Industry</h4>
-                                    <p>Hotel name boards, restaurant signage, directional signs</p>
-                                </div>
-                            </div>
-                            <div class="industry">
-                                <i class="fas fa-store"></i>
-                                <div>
-                                    <h4>Retail & Shopping</h4>
-                                    <p>Shop boards, mall signage, promotional displays</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="content-block">
-                    <h3>LED Signage Cost Breakdown in Hyderabad</h3>
-                    <p>Understanding signage costs helps in budget planning. Here's a detailed breakdown for typical LED signage projects in Hyderabad:</p>
-                    
-                    <div class="cost-table">
-                        <div class="table-header">
-                            <div>Component</div>
-                            <div>Percentage of Total</div>
-                            <div>Average Cost</div>
-                        </div>
-                        <div class="table-row">
-                            <div>Material (ACP/Stainless/Acrylic)</div>
-                            <div>40-50%</div>
-                            <div>₹850-4,000 per sqft</div>
-                        </div>
-                        <div class="table-row">
-                            <div>LED Components & Electronics</div>
-                            <div>20-25%</div>
-                            <div>₹200-500 per sqft</div>
-                        </div>
-                        <div class="table-row">
-                            <div>Fabrication & Labor</div>
-                            <div>15-20%</div>
-                            <div>₹150-300 per sqft</div>
-                        </div>
-                        <div class="table-row">
-                            <div>Installation</div>
-                            <div>10-15%</div>
-                            <div>₹100-250 per sqft</div>
-                        </div>
-                        <div class="table-row">
-                            <div>GST (Goods & Services Tax)</div>
-                            <div>18%</div>
-                            <div>Added to subtotal</div>
-                        </div>
-                    </div>
-                    
-                    <p class="note"><strong>Note:</strong> Terrace and high-rise signage may have additional costs for structural engineering and wind load certification.</p>
-                </div>
-                
-                <div class="content-block">
-                    <h3>Frequently Asked Questions About Signage</h3>
-                    
-                    <div class="faq-list">
-                        <div class="faq-item">
-                            <h4>How much does an LED sign board cost in Hyderabad?</h4>
-                            <p>LED sign board prices in Hyderabad typically range from <strong>₹850 to ₹4,000 per square foot</strong>. The exact cost depends on material quality, LED type (standard/premium/RGB), installation complexity, and warranty duration. For example, a basic ACP LED board starts at ₹850/sqft, while premium stainless steel 3D letters with RGB lighting can go up to ₹4,000/sqft.</p>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <h4>What is the installation timeline for signage?</h4>
-                            <p>Our standard installation process takes <strong>7-9 working days</strong> after design approval. This includes in-house manufacturing, quality checks, and professional installation. For large terrace signage projects on high-rise buildings, the timeline may extend to <strong>30-90 working days</strong> depending on structural requirements and municipal permissions.</p>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <h4>Do you provide site visits in Andhra Pradesh?</h4>
-                            <p>Yes, we offer <strong>free site visits across all major cities in Andhra Pradesh and Telangana</strong>. Our team visits your location to take precise measurements, assess visibility requirements, understand structural considerations, and provide expert recommendations before providing a quotation.</p>
-                        </div>
-                        
-                        <div class="faq-item">
-                            <h4>What warranty do you provide on LED signage?</h4>
-                            <p>We offer flexible warranty options: <strong>3 years (standard), 5 years (recommended), and 10 years (premium)</strong>. All warranties include LED replacement, SMPS coverage, and free service support. We also provide Annual Maintenance Contracts (AMC) after warranty expiration for continued support.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="cta-box">
-                    <h3>Looking for Professional Signage Solutions?</h3>
-                    <p>Whether you need terrace signage for your high-rise building in Hyderabad, 3D letters for your showroom in Vijayawada, or complete wayfinding systems for your hospital in Vizag, V SIGN provides end-to-end solutions with professional installation and comprehensive warranties.</p>
-                    
-                    <div class="cta-actions">
-                        <a href="budget-planner.html" class="btn-primary">
-                            <i class="fas fa-calculator"></i> Get Instant Quote
-                        </a>
-                        <a href="contact.html" class="btn-secondary">
-                            <i class="fas fa-phone"></i> Schedule Consultation
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content">
-                <div class="newsletter-info">
-                    <h3>Stay Updated with Signage Insights</h3>
-                    <p>Subscribe to our newsletter for the latest tips, trends, and case studies in signage design and installation.</p>
-                </div>
-                <div class="newsletter-form">
-                    <input type="email" placeholder="Your email address" id="newsletterEmail">
-                    <button onclick="subscribeNewsletter()" class="btn-primary">Subscribe</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>V SIGN</h3>
-                    <p class="footer-description">
-                        Premium signage manufacturer and installer serving Andhra Pradesh & Telangana 
-                        with in-house fabrication and professional installation.
-                    </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="budget-planner.html">Budget Planner</a></li>
-                        <li><a href="blogs.html">Blogs</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html#terrace">Terrace Signage</a></li>
-                        <li><a href="services.html#shop">Shop Boards</a></li>
-                        <li><a href="services.html#3d">3D Letters</a></li>
-                        <li><a href="services.html#hospital">Hospital Signage</a></li>
-                        <li><a href="services.html#wayfinding">Wayfinding</a></li>
-                        <li><a href="services.html#maintenance">Maintenance</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <a href="tel:+919848012345">+91 98480 12345</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@vsign.com">info@vsign.com</a>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Hyderabad, Telangana</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Sat: 9AM-7PM</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 V SIGN. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                </div>
-            </div>
-        </div>
+        <div style="width:100%;text-align:center;margin-top:12px;color:var(--muted);font-size:13px">© <span id="yr"></span> V SIGN. All rights reserved.</div>
+      </div>
     </footer>
+  </main>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/blogs.js"></script>
+  <!-- planner script -->
+  <script src="assets/planner/planner.js"></script>
+
+  <script>
+    // dynamic sample posts (replace with your CMS or static files)
+    const POSTS = [
+      {
+        id: 'how-to-budget-led-sign',
+        title: 'How to budget for an LED signboard: a practical guide',
+        date: '2025-01-02',
+        author: 'Henry Paul',
+        tags: ['budget','materials'],
+        excerpt: 'A step-by-step method to estimate realistic budgets for LED shop boards including material and installation considerations.',
+        image: 'assets/images/blog1.jpg'
+      },
+      {
+        id: 'acp-hoarding-checklist',
+        title: 'ACP hoarding checklist: permits, wind loads & installation tips',
+        date: '2024-12-10',
+        author: 'V SIGN Team',
+        tags: ['installation','case-study'],
+        excerpt: 'Before installing a large ACP hoarding, ensure you cover structural checks, permits, and safety – read our checklist.',
+        image: 'assets/images/blog2.jpg'
+      },
+      {
+        id: '3d-letters-care',
+        title: '3D letters: finish options and maintenance tips',
+        date: '2024-11-18',
+        author: 'Design Team',
+        tags: ['materials','maintenance'],
+        excerpt: 'From stainless to brass, learn which finishes last longer and how maintenance affects long-term costs.',
+        image: 'assets/images/blog3.jpg'
+      },
+      {
+        id: 'case-study-local-business',
+        title: 'Case study: How a local retailer increased footfall with a new storefront sign',
+        date: '2024-10-05',
+        author: 'V SIGN',
+        tags: ['case-study','budget'],
+        excerpt: 'Real world case study demonstrating the ROI of investing in well-designed signage.',
+        image: 'assets/images/blog4.jpg'
+      },
+      {
+        id: 'installation-safety',
+        title: 'Installation safety essentials for rooftop signage',
+        date: '2024-09-20',
+        author: 'Safety Team',
+        tags: ['installation','safety'],
+        excerpt: 'Key safety measures and equipment required for rooftop and high-rise signage installation.',
+        image: 'assets/images/blog5.jpg'
+      }
+    ];
+
+    // client-side pagination & filtering
+    const PER_PAGE = 4;
+    let currentPage = 1;
+    let activeFilter = '';
+    const postsEl = document.getElementById('posts');
+    const paginationEl = document.getElementById('pagination');
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    function renderPosts() {
+      const q = document.getElementById('searchInput').value.trim().toLowerCase();
+      const tag = document.getElementById('tagFilter').value;
+      activeFilter = tag;
+      let filtered = POSTS.filter(p => {
+        if (tag && !p.tags.includes(tag)) return false;
+        if (!q) return true;
+        return (p.title + ' ' + p.excerpt + ' ' + p.tags.join(' ')).toLowerCase().includes(q);
+      });
+
+      const total = filtered.length;
+      const pages = Math.max(1, Math.ceil(total / PER_PAGE));
+      if (currentPage > pages) currentPage = pages;
+      const start = (currentPage -1) * PER_PAGE;
+      const pagePosts = filtered.slice(start, start + PER_PAGE);
+
+      postsEl.innerHTML = pagePosts.map(p => `
+        <article class="post-card">
+          <img src="${p.image}" class="post-thumb" alt="${p.title}" onerror="this.style.opacity=.5">
+          <div class="post-body">
+            <div style="display:flex;justify-content:space-between;align-items:start">
+              <div>
+                <h3 style="margin:0 0 6px 0;font-size:18px">${p.title}</h3>
+                <div class="muted" style="font-size:13px">by ${p.author} • ${p.date}</div>
+              </div>
+              <div style="text-align:right">
+                ${p.tags.map(t=>`<span class="tag">${t}</span>`).join('')}
+              </div>
+            </div>
+            <p class="muted" style="margin-top:10px">${p.excerpt}</p>
+            <div style="margin-top:10px;display:flex;justify-content:space-between;align-items:center">
+              <a href="blog-detail.html#${p.id}" class="page-btn">Read more</a>
+              <div style="display:flex;gap:8px">
+                <button class="page-btn" onclick="openPlanner('${mapTagToService(p.tags[0])}')">Estimate</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      `).join('');
+
+      // pagination
+      paginationEl.innerHTML = '';
+      for (let i=1;i<=pages;i++){
+        const btn = document.createElement('button');
+        btn.className = 'page-btn';
+        btn.textContent = i;
+        if (i === currentPage) btn.style.fontWeight = '700';
+        btn.addEventListener('click', ()=> { currentPage = i; renderPosts(); });
+        paginationEl.appendChild(btn);
+      }
+    }
+
+    function mapTagToService(tag){
+      // small heuristic: map tag to likely service so Estimate prefill is helpful
+      if (!tag) return '';
+      tag = tag.toLowerCase();
+      if (tag === 'materials' || tag === 'budget') return 'led-shop';
+      if (tag === 'installation' || tag === 'safety') return 'acp-hoarding';
+      if (tag === 'case-study') return '3d-letters';
+      return '';
+    }
+
+    // filters
+    document.getElementById('searchInput').addEventListener('input', ()=> { currentPage=1; renderPosts(); });
+    document.getElementById('tagFilter').addEventListener('change', ()=> { currentPage=1; renderPosts(); });
+    function filterByTag(t){ document.getElementById('tagFilter').value = t; currentPage = 1; renderPosts(); }
+
+    // subscribe (basic client-side)
+    function subscribe(){
+      const email = document.getElementById('subscribeEmail').value.trim();
+      const msg = document.getElementById('subscribeMsg');
+      if (!email || !email.includes('@')) { msg.textContent = 'Please enter a valid email.'; return; }
+      msg.textContent = 'Subscribed — we will email monthly updates.';
+      document.getElementById('subscribeEmail').value = '';
+    }
+
+    // expose small helpers
+    window.filterByTag = filterByTag;
+    window.subscribe = subscribe;
+
+    // initial render
+    renderPosts();
+  </script>
 </body>
 </html>

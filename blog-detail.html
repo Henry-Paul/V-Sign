@@ -1,170 +1,294 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Blog Article — V SIGN</title>
-  <meta name="description" content="In-depth signage guides, budgeting tips, installation insights and case studies by V SIGN." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Estimate Signage Costs Realistically — V SIGN</title>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+<meta name="description" content="A clear, practical guide explaining how signage costs are calculated, what affects pricing, and how to estimate budgets without guesswork.">
 
-  <!-- Planner -->
-  <link rel="stylesheet" href="assets/planner/planner.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --primary:#0B3D91;
-      --accent:#FFB100;
-      --muted:#6B7280;
-      --bg:#FBFDFF;
-      --card:#FFFFFF;
-      --radius:14px;
-      --shadow:0 14px 40px rgba(12,32,63,0.06);
-    }
-    body{margin:0;font-family:Inter,system-ui;background:var(--bg);color:#0f172a}
-    .container{max-width:900px;margin:0 auto;padding:0 20px}
-    header{background:#fff;border-bottom:1px solid rgba(0,0,0,0.04)}
-    .nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
-    .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#0A2E70);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:Poppins}
-    .hero{padding:36px 0 20px;border-bottom:1px solid rgba(11,61,145,0.05)}
-    h1{font-family:Poppins;font-size:30px;color:var(--primary)}
-    h2{margin-top:26px;color:#0f172a}
-    h3{margin-top:18px;color:#1f2937}
-    .meta{color:var(--muted);font-size:14px;margin-top:6px}
-    .content{line-height:1.75;font-size:16px;margin-top:22px}
-    .toc{background:#fff;padding:14px;border-radius:12px;box-shadow:var(--shadow);margin:20px 0}
-    .toc a{display:block;color:var(--primary);margin:6px 0}
-    .card{background:#fff;padding:16px;border-radius:14px;box-shadow:var(--shadow);margin:22px 0}
-    .cta{background:linear-gradient(180deg,#fff,#f6f9ff)}
-    .btn{padding:10px 14px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
-    .btn-primary{background:var(--primary);color:white}
-    .btn-accent{background:var(--accent)}
-    footer{margin-top:40px;padding:28px 0;border-top:1px solid rgba(0,0,0,0.04);background:#fff}
-  </style>
+<style>
+:root{
+  --bg:#fbfbfd;
+  --text:#0f172a;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --accent:#0f172a;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:760px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* Header */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:72px;
+}
+
+.brand{
+  font-weight:600;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:15px;
+}
+
+nav a:hover{
+  color:var(--text);
+}
+
+/* Article */
+.article{
+  padding:80px 0;
+}
+
+.article h1{
+  font-size:38px;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.meta{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.article-content{
+  margin-top:40px;
+  line-height:1.75;
+  font-size:17px;
+}
+
+.article-content h2{
+  margin-top:48px;
+  font-size:28px;
+  font-weight:600;
+}
+
+.article-content h3{
+  margin-top:32px;
+  font-size:20px;
+  font-weight:600;
+}
+
+.article-content p{
+  margin-top:16px;
+  color:var(--text);
+}
+
+.article-content ul{
+  margin-top:16px;
+  padding-left:20px;
+}
+
+.article-content li{
+  margin-top:8px;
+  color:var(--text);
+}
+
+/* CTA */
+.cta-box{
+  margin-top:64px;
+  padding:40px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  text-align:center;
+}
+
+.cta-box h3{
+  margin:0;
+  font-size:26px;
+  font-weight:600;
+}
+
+.cta-box p{
+  margin-top:14px;
+  color:var(--muted);
+  font-size:16px;
+}
+
+.cta-primary{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 26px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:10px;
+  font-weight:500;
+  text-decoration:none;
+}
+
+/* Footer */
+footer{
+  padding:48px 0;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  font-size:14px;
+}
+
+.footer-grid a{
+  display:block;
+  color:var(--muted);
+  text-decoration:none;
+  margin-top:8px;
+}
+
+.footer-grid a:hover{
+  color:var(--text);
+}
+
+@media(max-width:900px){
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+  .article h1{
+    font-size:32px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="container nav">
-    <div style="display:flex;gap:12px;align-items:center">
-      <div class="logo">VS</div>
-      <div>
-        <div style="font-weight:700;color:var(--primary);font-family:Poppins">V SIGN</div>
-        <div class="meta">Premium LED & 3D Signage</div>
-      </div>
-    </div>
-    <nav style="display:flex;gap:14px;align-items:center">
+    <div class="brand">V SIGN</div>
+    <nav>
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
-      <a href="blogs.html">Blog</a>
+      <a href="products.html">Products</a>
+      <a href="blogs.html">Insights</a>
       <a href="contact.html">Contact</a>
-      <button onclick="openPlanner()" class="btn btn-accent">Get Quote</button>
     </nav>
   </div>
 </header>
 
-<main class="container">
+<main class="article">
+  <div class="container">
 
-  <article class="hero">
-    <h1 id="postTitle">Loading article…</h1>
-    <div class="meta" id="postMeta"></div>
-  </article>
+    <h1>How to estimate signage costs realistically</h1>
+    <div class="meta">
+      Published by V SIGN · 6 min read
+    </div>
 
-  <div class="toc" id="toc">
-    <strong>Table of contents</strong>
-    <div id="tocLinks"></div>
+    <div class="article-content">
+
+      <p>
+        Signage pricing often feels confusing because businesses are rarely shown
+        how costs are calculated. This guide breaks down the real factors that
+        influence signage budgets, helping you plan with confidence.
+      </p>
+
+      <h2>Why signage pricing feels unpredictable</h2>
+      <p>
+        Unlike off-the-shelf products, signage is custom-built. Differences in
+        size, material, lighting, and installation conditions can significantly
+        change the final cost.
+      </p>
+
+      <h2>The three main cost drivers</h2>
+
+      <h3>1. Dimensions and scale</h3>
+      <p>
+        Larger signage requires more material, structural support, and fabrication
+        time. Even small increases in width or height can impact pricing.
+      </p>
+
+      <h3>2. Material and finish</h3>
+      <p>
+        LED boards, ACP panels, acrylic letters, and stainless steel all have
+        different cost structures, lifespans, and maintenance needs.
+      </p>
+
+      <h3>3. Location and installation</h3>
+      <p>
+        Installation height, access difficulty, local permissions, and city-specific
+        logistics directly affect labour and equipment costs.
+      </p>
+
+      <h2>Why estimates are more useful than fixed prices</h2>
+      <p>
+        Early-stage estimates allow you to align expectations, plan budgets, and
+        avoid surprises before engaging vendors or finalising designs.
+      </p>
+
+      <h2>Using estimation to make better decisions</h2>
+      <p>
+        When you understand realistic cost ranges, conversations with vendors
+        become more productive and focused on value rather than confusion.
+      </p>
+
+    </div>
+
+    <div class="cta-box">
+      <h3>Want to apply this to your own project?</h3>
+      <p>
+        Use the estimator to see realistic signage budget ranges
+        based on your size and location.
+      </p>
+      <a href="app.html" class="cta-primary">
+        Estimate your signage budget
+      </a>
+    </div>
+
   </div>
-
-  <section class="content" id="postContent"></section>
-
-  <!-- CTA -->
-  <div class="card cta">
-    <h2>Want an accurate signage budget?</h2>
-    <p>Use our smart estimator to get a realistic range based on size, material and city.</p>
-    <button class="btn btn-primary" onclick="openPlanner()">Open Budget Planner</button>
-  </div>
-
-  <!-- FAQ -->
-  <div class="card">
-    <h2>Frequently Asked Questions</h2>
-    <h3>Is this price final?</h3>
-    <p>No. This is an estimate. Final pricing requires a site visit and measurements.</p>
-
-    <h3>Do prices vary by city?</h3>
-    <p>Yes. Installation, access, permits and logistics can affect cost.</p>
-
-    <h3>Can I reuse this estimate?</h3>
-    <p>You can save or share it, but final approval is required before fabrication.</p>
-  </div>
-
 </main>
 
 <footer>
-  <div class="container" style="text-align:center">
-    <div style="font-weight:700;color:var(--primary)">V SIGN</div>
-    <div class="meta">Serving Andhra Pradesh & Telangana</div>
-    <div class="meta">© <span id="yr"></span> V SIGN</div>
+  <div class="container footer-grid">
+    <div>
+      <strong>V SIGN</strong>
+      <p style="margin-top:10px;color:var(--muted)">
+        Transparent signage estimation platform.
+      </p>
+    </div>
+
+    <div>
+      <strong>Explore</strong>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+
+    <div>
+      <strong>Get started</strong>
+      <a href="app.html">Estimate budget</a>
+      <a href="contact.html">Contact</a>
+    </div>
   </div>
 </footer>
-
-<!-- Planner -->
-<script src="assets/planner/planner.js"></script>
-
-<script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-
-/* ---- BLOG DATA (same IDs used in blogs.html) ---- */
-const POSTS = {
-  "how-to-budget-led-sign":{
-    title:"How to budget for an LED signboard (Complete Guide)",
-    author:"Henry Paul",
-    date:"Jan 2, 2025",
-    content:`
-      <h2 id="why-budget">Why budgeting matters for signage</h2>
-      <p>Most businesses underestimate signage cost by ignoring materials, electricals and installation. A structured budget prevents surprises.</p>
-
-      <h2 id="area">Step 1: Calculate area correctly</h2>
-      <p>Always calculate width × height in feet. Even small decimal changes affect cost.</p>
-
-      <h2 id="materials">Step 2: Choose material wisely</h2>
-      <h3>ACP & Acrylic</h3>
-      <p>Most cost-effective for storefronts.</p>
-      <h3>3D Stainless Letters</h3>
-      <p>Premium finish with higher durability and cost.</p>
-
-      <h2 id="installation">Step 3: Installation & permits</h2>
-      <p>Rooftop and ACP hoardings require structural checks and permissions.</p>
-
-      <h2 id="planner">Use a planner instead of guessing</h2>
-      <p>Our estimator combines size, city, material and warranty to give realistic ranges.</p>
-    `
-  }
-};
-
-/* ---- RENDER POST ---- */
-const slug = location.hash.replace('#','');
-const post = POSTS[slug];
-
-if(!post){
-  document.getElementById('postTitle').textContent = "Article not found";
-}else{
-  document.getElementById('postTitle').textContent = post.title;
-  document.getElementById('postMeta').textContent = `By ${post.author} • ${post.date}`;
-  document.getElementById('postContent').innerHTML = post.content;
-
-  // Generate TOC
-  const headings = document.querySelectorAll('#postContent h2');
-  const toc = document.getElementById('tocLinks');
-  headings.forEach(h=>{
-    const a = document.createElement('a');
-    a.href = '#' + h.id;
-    a.textContent = h.textContent;
-    toc.appendChild(a);
-  });
-}
-</script>
 
 </body>
 </html>

@@ -1,410 +1,464 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Planner | V SIGN - Get Instant Signage Quote</title>
-    <meta name="description" content="Interactive budget planner for LED signage. Get instant quotes for terrace signs, shop boards, 3D letters in Hyderabad, Vijayawada, Vizag.">
-    
-    <!-- Structured Data for FAQ -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [{
-            "@type": "Question",
-            "name": "How much does an LED sign board cost?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "LED sign board prices typically range from ₹850 to ₹4,000 per square foot depending on material, illumination and finishing. Use our budget planner for exact pricing."
-            }
-        }, {
-            "@type": "Question",
-            "name": "How long does installation take?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Standard signage installation takes 7-9 working days from design approval. Terrace signage may take 30-90 days due to structural requirements."
-            }
-        }]
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Budget Planner — V SIGN | Instant Signage Estimate</title>
+  <meta name="description" content="Interactive budget planner — enter width × height and options to get a range-based estimate for LED, ACP, 3D letters & more. Serving Andhra Pradesh & Telangana." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#0B3D91;
+      --accent:#FFB100;
+      --muted:#6B7280;
+      --bg:#FBFDFF;
+      --card:#FFFFFF;
+      --glass: rgba(11,61,145,0.06);
+      --radius:16px;
+      --shadow: 0 12px 30px rgba(12,32,63,0.08);
     }
-    </script>
-    
-    <!-- Same CSS and JS includes as index.html -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      margin:0;background:var(--bg);color:#0f172a;line-height:1.5;-webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px;}
+    header{background:#fff;border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:60}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#0A2E70);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:Poppins;font-size:18px;box-shadow:var(--shadow)}
+    .hero{padding:44px 0 32px;background:linear-gradient(180deg, rgba(11,61,145,0.04), rgba(255,191,0,0.01));border-bottom:1px solid rgba(11,61,145,0.02)}
+    .hero-grid{display:grid;grid-template-columns:1fr 400px;gap:26px;align-items:start}
+    .hero h1{font-family:Poppins,Inter;font-size:32px;margin:0;color:var(--primary)}
+    .hero h2{font-size:18px;margin-top:10px;color:#0f172a}
+    .hero h3{font-size:15px;margin-top:6px;color:var(--muted);font-weight:600}
+    .lead{color:var(--muted);margin-top:12px}
+    .card{background:var(--card);padding:16px;border-radius:14px;box-shadow:var(--shadow)}
+    .wizard{background:var(--card);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+    .stepper{display:flex;gap:8px;align-items:center;margin-bottom:14px}
+    .step-pill{padding:8px 12px;border-radius:999px;background:#f1f5f9;color:var(--muted);font-weight:600;font-size:13px}
+    .step-pill.active{background:linear-gradient(90deg,var(--primary),#3b82f6);color:white}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type="number"], select{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(15,23,42,0.06);font-size:15px}
+    .row{display:flex;gap:12px;align-items:center}
+    .col-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .muted{color:var(--muted);font-size:14px}
+    .price{font-weight:800;color:var(--primary);font-size:18px}
+    .line-item{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(15,23,42,0.04)}
+    .total{font-size:20px;font-weight:900;color:var(--primary)}
+    .btn{padding:10px 14px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn-primary{background:var(--primary);color:white}
+    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
+    footer{margin-top:40px;padding:28px 0;background:#fff;border-top:1px solid rgba(15,23,42,0.04)}
+    .help{font-size:13px;color:var(--muted);margin-top:8px}
+    @media (max-width:960px){.hero-grid{grid-template-columns:1fr}.col-2{grid-template-columns:1fr}.hero h1{font-size:26px}}
+  </style>
 </head>
 <body>
-    <!-- Contact Bar and Navigation (same as index.html) -->
-    
-    <!-- Budget Planner Hero -->
-    <section class="budget-hero">
-        <div class="container">
-            <div class="budget-hero-content">
-                <h1>Interactive Budget Planner</h1>
-                <p>Configure your custom signage and get instant pricing with detailed breakdown</p>
-                
-                <div class="progress-steps">
-                    <div class="step-indicator active">1</div>
-                    <div class="step-indicator">2</div>
-                    <div class="step-indicator">3</div>
-                    <div class="step-indicator">4</div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progress-bar"></div>
-                    </div>
-                </div>
-            </div>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">VS</div>
+        <div>
+          <div style="font-weight:700;color:var(--primary);font-family:Poppins">V SIGN</div>
+          <div style="font-size:12px;color:var(--muted)">Premium LED & 3D Signage — Hyderabad</div>
         </div>
-    </section>
-    
-    <!-- Budget Planner Content -->
-    <section class="budget-planner">
-        <div class="container">
-            <div class="planner-grid">
-                <!-- Left Column - Configuration -->
-                <div class="planner-config">
-                    <div class="step step-1 active">
-                        <h2>Select Product Type</h2>
-                        <div class="product-options">
-                            <div class="product-option selected" data-value="terrace">
-                                <i class="fas fa-building"></i>
-                                <h3>Terrace Signage</h3>
-                                <p>High-rise rooftop signs</p>
-                                <span class="price-range">₹1,200-4,000/sqft</span>
-                            </div>
-                            <div class="product-option" data-value="shop">
-                                <i class="fas fa-store"></i>
-                                <h3>Shop Board</h3>
-                                <p>Retail store signage</p>
-                                <span class="price-range">₹850-1,500/sqft</span>
-                            </div>
-                            <div class="product-option" data-value="3d-letters">
-                                <i class="fas fa-text-height"></i>
-                                <h3>3D Letters</h3>
-                                <p>Premium dimensional letters</p>
-                                <span class="price-range">₹1,500-3,000/sqft</span>
-                            </div>
-                            <div class="product-option" data-value="hospital">
-                                <i class="fas fa-hospital"></i>
-                                <h3>Hospital Signage</h3>
-                                <p>Medical facility signs</p>
-                                <span class="price-range">₹850-2,000/sqft</span>
-                            </div>
-                        </div>
-                        <button class="btn-primary next-step">Next: Dimensions <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                    
-                    <div class="step step-2">
-                        <h2>Specify Dimensions & Location</h2>
-                        <div class="dimension-controls">
-                            <div class="dimension-slider">
-                                <label>Width (feet)</label>
-                                <input type="range" id="width-slider" min="1" max="50" value="10">
-                                <span id="width-value">10 ft</span>
-                            </div>
-                            <div class="dimension-slider">
-                                <label>Height (feet)</label>
-                                <input type="range" id="height-slider" min="1" max="20" value="3">
-                                <span id="height-value">3 ft</span>
-                            </div>
-                        </div>
-                        
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label>Quantity</label>
-                                <input type="number" id="quantity" value="1" min="1">
-                            </div>
-                            <div class="form-group">
-                                <label>City</label>
-                                <select id="city-select">
-                                    <option value="hyderabad">Hyderabad</option>
-                                    <option value="vijayawada">Vijayawada</option>
-                                    <option value="vizag">Visakhapatnam</option>
-                                    <option value="guntur">Guntur</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Installation Location</label>
-                                <select id="location-select">
-                                    <option value="rooftop">Rooftop/Terrace</option>
-                                    <option value="facade">Building Facade</option>
-                                    <option value="ground">Ground Level</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div class="step-actions">
-                            <button class="btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
-                            <button class="btn-primary next-step">Next: Customization <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    
-                    <div class="step step-3">
-                        <h2>Customize Your Sign</h2>
-                        
-                        <div class="customization-section">
-                            <h3>Material</h3>
-                            <div class="option-grid">
-                                <div class="material-option selected" data-value="acp">
-                                    <div class="option-content">
-                                        <h4>ACP Board</h4>
-                                        <p>Most popular, weather resistant</p>
-                                        <span class="price-tag">+0%</span>
-                                    </div>
-                                </div>
-                                <div class="material-option" data-value="stainless">
-                                    <div class="option-content">
-                                        <h4>Stainless Steel</h4>
-                                        <p>Premium finish, durable</p>
-                                        <span class="price-tag">+80%</span>
-                                    </div>
-                                </div>
-                                <div class="material-option" data-value="acrylic">
-                                    <div class="option-content">
-                                        <h4>Acrylic LED</h4>
-                                        <p>Modern glow effect</p>
-                                        <span class="price-tag">+40%</span>
-                                    </div>
-                                </div>
-                                <div class="material-option" data-value="brass">
-                                    <div class="option-content">
-                                        <h4>Brass</h4>
-                                        <p>Luxury heritage look</p>
-                                        <span class="price-tag">+120%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="customization-section">
-                            <h3>LED Type</h3>
-                            <div class="option-grid">
-                                <div class="led-option selected" data-value="standard">
-                                    <div class="option-content">
-                                        <h4>Standard White</h4>
-                                        <p>Energy efficient</p>
-                                    </div>
-                                </div>
-                                <div class="led-option" data-value="premium">
-                                    <div class="option-content">
-                                        <h4>Premium High-Bright</h4>
-                                        <p>Extra visibility</p>
-                                    </div>
-                                </div>
-                                <div class="led-option" data-value="rgb">
-                                    <div class="option-content">
-                                        <h4>RGB Color</h4>
-                                        <p>Multi-color effects</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="customization-section">
-                            <h3>Warranty</h3>
-                            <div class="option-grid">
-                                <div class="warranty-option selected" data-value="3">
-                                    <div class="option-content">
-                                        <h4>3 Years</h4>
-                                        <p>Standard coverage</p>
-                                    </div>
-                                </div>
-                                <div class="warranty-option" data-value="5">
-                                    <div class="option-content">
-                                        <h4>5 Years</h4>
-                                        <p>Recommended</p>
-                                    </div>
-                                </div>
-                                <div class="warranty-option" data-value="10">
-                                    <div class="option-content">
-                                        <h4>10 Years</h4>
-                                        <p>Premium protection</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="step-actions">
-                            <button class="btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
-                            <button class="btn-primary next-step">Next: Summary <i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                    
-                    <div class="step step-4">
-                        <h2>Quote Summary</h2>
-                        
-                        <div class="summary-card">
-                            <h3>Project Details</h3>
-                            <div class="summary-grid">
-                                <div class="summary-item">
-                                    <span class="label">Product</span>
-                                    <span class="value" id="summary-product">Terrace Signage</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span class="label">Size</span>
-                                    <span class="value" id="summary-size">10 × 3 ft</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span class="label">Material</span>
-                                    <span class="value" id="summary-material">ACP Board</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span class="label">Warranty</span>
-                                    <span class="value" id="summary-warranty">3 Years</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span class="label">City</span>
-                                    <span class="value" id="summary-city">Hyderabad</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <form id="quote-form">
-                            <h3>Contact Information</h3>
-                            <div class="form-grid">
-                                <div class="form-group">
-                                    <input type="text" name="name" placeholder="Your Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" name="phone" placeholder="Phone Number" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Email Address" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <textarea name="message" placeholder="Additional requirements or notes..." rows="3"></textarea>
-                            </div>
-                            
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="site-visit" name="site-visit" checked>
-                                <label for="site-visit">Include free site visit</label>
-                            </div>
-                            
-                            <div class="step-actions">
-                                <button type="button" class="btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
-                                <button type="submit" class="btn-primary">
-                                    <i class="fas fa-paper-plane"></i> Submit Quote Request
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                
-                <!-- Right Column - Price Summary -->
-                <div class="planner-summary">
-                    <div class="summary-card">
-                        <h3>Price Breakdown</h3>
-                        
-                        <div class="price-breakdown">
-                            <div class="price-item">
-                                <span>Material Cost</span>
-                                <span data-price="material">₹25,500</span>
-                            </div>
-                            <div class="price-item">
-                                <span>Fabrication</span>
-                                <span data-price="fabrication">₹7,650</span>
-                            </div>
-                            <div class="price-item">
-                                <span>Electronics (LED)</span>
-                                <span data-price="electronics">₹6,000</span>
-                            </div>
-                            <div class="price-item">
-                                <span>Installation</span>
-                                <span data-price="installation">₹4,500</span>
-                            </div>
-                            <div class="price-item amc-item" style="display: none;">
-                                <span>Annual Maintenance (AMC)</span>
-                                <span data-price="amc">₹5,872/year</span>
-                            </div>
-                            
-                            <div class="price-divider"></div>
-                            
-                            <div class="price-item">
-                                <span>GST (18%)</span>
-                                <span data-price="gst">₹7,917</span>
-                            </div>
-                            
-                            <div class="price-divider"></div>
-                            
-                            <div class="price-total">
-                                <span>Total</span>
-                                <span data-price="total">₹51,567</span>
-                            </div>
-                        </div>
-                        
-                        <div class="summary-features">
-                            <div class="feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Free Site Visit Included</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>3D Design Preview</span>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-check-circle"></i>
-                                <span>No Hidden Costs</span>
-                            </div>
-                        </div>
-                        
-                        <div class="summary-actions">
-                            <button class="btn-secondary" id="download-pdf">
-                                <i class="fas fa-download"></i> Download PDF
-                            </button>
-                            <button class="btn-primary" id="share-whatsapp">
-                                <i class="fab fa-whatsapp"></i> Share on WhatsApp
-                            </button>
-                        </div>
-                        
-                        <div class="warranty-note">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <strong>Quality Guarantee</strong>
-                                <p>3-year warranty • Free site visit • 7-9 day installation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <nav style="display:flex;gap:12px;align-items:center">
+        <a href="index.html" class="muted">Home</a>
+        <a href="services.html" class="muted">Services</a>
+        <a href="contact.html" class="muted">Contact</a>
+        <a href="blogs.html" class="muted">Blog</a>
+        <a href="index.html#products" class="btn" style="background:var(--accent);border-radius:12px;padding:10px 14px;font-weight:700">View Products</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="kicker" style="display:inline-block;background:var(--glass);color:var(--primary);padding:6px 10px;border-radius:12px;font-weight:700">Instant Estimate</div>
+          <h1 id="mainH1">Budget Planner — Estimate Signage Costs Quickly</h1>
+          <h2 id="mainH2">Interactive, transparent & tailored for Andhra Pradesh & Telangana</h2>
+          <h3 id="mainH3">Enter width × height, choose options — get a confidence range and a line-item breakdown.</h3>
+          <p class="lead">This tool provides an initial predictive budget range per sqft and total range including GST (18%). For final pricing we recommend our free site visit.</p>
+          <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-primary" onclick="startFromStep(1)">Start Estimator</button>
+            <a href="services.html" class="btn btn-ghost">Browse Services</a>
+          </div>
+          <p class="help">Tip: Use decimals for accurate area (e.g., 10.5 × 3.2). Prices are shown as ranges per sqft to reflect material & finish choices.</p>
         </div>
-    </section>
-    
-    <!-- FAQ Section -->
-    <section class="budget-faq">
-        <div class="container">
-            <h2>Common Questions About Pricing</h2>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>How accurate is this quote?</h3>
-                    <p>Our interactive calculator provides estimates within 90% accuracy. Final pricing may vary slightly based on site-specific requirements, which we assess during the free site visit.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>What's included in the price?</h3>
-                    <p>The quote includes material, fabrication, LED components, professional installation, GST, and a free site visit. Optional services like AMC and electrical work are separate.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>Do you offer payment plans?</h3>
-                    <p>Yes, we offer flexible payment options: 50% advance, 40% after installation, and 10% after completion. We also accept all major credit/debit cards and UPI.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>What if my requirements change?</h3>
-                    <p>You can modify your requirements anytime before production begins. We'll recalculate the quote and get your approval before proceeding.</p>
-                </div>
+
+        <aside>
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <div class="muted">Typical per-sqft ranges</div>
+                <div class="price">₹850 – ₹4,000 / sqft</div>
+              </div>
+              <div style="text-align:right">
+                <div class="muted">Regions</div>
+                <div style="font-weight:700">AP & Telangana</div>
+              </div>
             </div>
-        </div>
+
+            <div style="margin-top:12px">
+              <div style="font-weight:700">Why use this tool?</div>
+              <ul class="muted" style="margin-top:8px;padding-left:16px">
+                <li>Fast, transparent range-based estimates</li>
+                <li>Itemized cost breakdown (materials, fabrication, electronics, installation)</li>
+                <li>Save as file or share via WhatsApp</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
     </section>
-    
-    <!-- Footer (same as index.html) -->
-    
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/budget-planner.js"></script>
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Wizard area -->
+    <section class="container" style="padding:28px 0">
+      <div class="wizard" id="wizard">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:700;font-size:18px">Estimator</div>
+            <div class="muted">A guided 4-step estimator with live math and confident ranges</div>
+          </div>
+          <div id="progressLabels" style="display:flex;gap:8px;align-items:center">
+            <div class="step-pill active" data-step="1">1 Choose</div>
+            <div class="step-pill" data-step="2">2 Size</div>
+            <div class="step-pill" data-step="3">3 Options</div>
+            <div class="step-pill" data-step="4">4 Review</div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start">
+          <div>
+            <!-- Step content -->
+            <div id="step1" class="step-block">
+              <label for="serviceSelect">Select service (affects per-sqft range)</label>
+              <select id="serviceSelect" aria-label="Select service" onchange="onChangeService()">
+                <option value="led-shop">LED Shop Board — ₹850 – ₹1,500 / sqft</option>
+                <option value="acp-hoarding">ACP Hoarding — ₹1,200 – ₹2,500 / sqft</option>
+                <option value="3d-letters">3D Stainless Letters — ₹1,500 – ₹4,000 / sqft</option>
+                <option value="wayfinding">Wayfinding — ₹800 – ₹1,800 / sqft</option>
+                <option value="hospital">Hospital — ₹900 – ₹2,000 / sqft</option>
+                <option value="school">School Signage — ₹800 – ₹1,600 / sqft</option>
+              </select>
+
+              <div style="margin-top:14px" class="col-2">
+                <div>
+                  <label for="width">Width (ft)</label>
+                  <input id="width" type="number" min="0.5" step="0.1" value="10" aria-describedby="widthHelp" />
+                  <div id="widthHelp" class="muted">Enter width in feet</div>
+                </div>
+                <div>
+                  <label for="height">Height (ft)</label>
+                  <input id="height" type="number" min="0.5" step="0.1" value="3" aria-describedby="heightHelp" />
+                  <div id="heightHelp" class="muted">Enter height in feet</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="step2" class="step-block" style="display:none;margin-top:12px">
+              <label>Material & lighting choices</label>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
+                <button class="btn btn-ghost" onclick="setMaterial('acp')" data-mat="acp">ACP</button>
+                <button class="btn btn-ghost" onclick="setMaterial('acrylic')" data-mat="acrylic">Acrylic</button>
+                <button class="btn btn-ghost" onclick="setMaterial('stainless')" data-mat="stainless">Stainless</button>
+                <button class="btn btn-ghost" onclick="setMaterial('brass')" data-mat="brass">Brass / Premium</button>
+              </div>
+
+              <div style="margin-top:12px">
+                <label for="ledType">LED type</label>
+                <select id="ledType">
+                  <option value="std">Standard LED</option>
+                  <option value="premium">Premium LED</option>
+                </select>
+              </div>
+            </div>
+
+            <div id="step3" class="step-block" style="display:none;margin-top:12px">
+              <label>Location & warranty</label>
+              <div class="col-2">
+                <div>
+                  <label for="city">City</label>
+                  <select id="city">
+                    <option value="hyderabad">Hyderabad</option>
+                    <option value="vijayawada">Vijayawada</option>
+                    <option value="visakhapatnam">Visakhapatnam</option>
+                    <option value="guntur">Guntur</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="warranty">Warranty</label>
+                  <select id="warranty">
+                    <option value="3">3 years</option>
+                    <option value="5">5 years (+20%)</option>
+                    <option value="10">10 years (+50%)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="margin-top:12px">
+                <label><input id="includeAmc" type="checkbox" /> Include AMC estimate (optional)</label>
+              </div>
+            </div>
+
+            <div id="step4" class="step-block" style="display:none;margin-top:12px">
+              <label>Review & finalize</label>
+              <div class="card" style="margin-top:10px">
+                <div style="display:flex;justify-content:space-between">
+                  <div>
+                    <div style="font-weight:700" id="reviewService">Service</div>
+                    <div class="muted" id="reviewSize">Size</div>
+                  </div>
+                  <div style="text-align:right">
+                    <div class="muted">Area</div>
+                    <div id="reviewArea" style="font-weight:700">0 sqft</div>
+                  </div>
+                </div>
+
+                <div style="margin-top:12px">
+                  <div class="line-item"><div>Material</div><div id="riMaterial" class="muted">₹0</div></div>
+                  <div class="line-item"><div>Fabrication</div><div id="riFabric" class="muted">₹0</div></div>
+                  <div class="line-item"><div>Electronics</div><div id="riElect" class="muted">₹0</div></div>
+                  <div class="line-item"><div>Installation</div><div id="riInstall" class="muted">₹0</div></div>
+                  <div class="line-item"><div>AMC (opt)</div><div id="riAMC" class="muted">₹0</div></div>
+                  <div class="line-item"><div>Subtotal</div><div id="riSub" class="muted">₹0</div></div>
+                  <div class="line-item"><div>GST (18%)</div><div id="riGst" class="muted">₹0</div></div>
+                  <div style="display:flex;justify-content:space-between;padding-top:10px">
+                    <div class="muted">Estimated total</div>
+                    <div id="riTotal" class="total">₹0 — ₹0</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+              <button class="btn btn-ghost" id="btnBack" onclick="goBack()">Back</button>
+              <button class="btn btn-primary" id="btnNext" onclick="goNext()">Next</button>
+            </div>
+          </div>
+
+          <aside>
+            <div class="card">
+              <div style="display:flex;justify-content:space-between;align-items:center">
+                <div>
+                  <div class="muted">Price per sqft</div>
+                  <div id="asideRange" class="price">₹850 – ₹1,500</div>
+                </div>
+                <div style="text-align:right">
+                  <div class="muted">Area</div>
+                  <div id="asideArea" style="font-weight:700">30 sqft</div>
+                </div>
+              </div>
+
+              <div style="margin-top:12px">
+                <div class="line-item"><div>Material</div><div id="asideMaterial" class="muted">₹0 — ₹0</div></div>
+                <div class="line-item"><div>Fabrication</div><div id="asideFabric" class="muted">₹0 — ₹0</div></div>
+                <div class="line-item"><div>Electronics</div><div id="asideElect" class="muted">₹0 — ₹0</div></div>
+                <div class="line-item"><div>Installation</div><div id="asideInstall" class="muted">₹0 — ₹0</div></div>
+                <div class="line-item"><div>AMC</div><div id="asideAmc" class="muted">₹0 — ₹0</div></div>
+                <div class="line-item"><div>Subtotal</div><div id="asideSub" class="muted">₹0 — ₹0</div></div>
+                <div class="line-item"><div>GST</div><div id="asideGst" class="muted">₹0 — ₹0</div></div>
+                <div style="display:flex;justify-content:space-between;padding-top:10px">
+                  <div class="muted">Estimated total</div>
+                  <div id="asideTotal" class="total">₹0 — ₹0</div>
+                </div>
+              </div>
+
+              <div style="margin-top:12px;display:flex;gap:8px">
+                <button class="btn btn-primary" onclick="downloadQuote()">Save</button>
+                <button class="btn btn-ghost" onclick="shareWhatsApp()">Share</button>
+              </div>
+
+              <div class="help">This is an initial estimate. Book a site visit for an exact quote.</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+        <div>
+          <div style="font-weight:700;color:var(--primary)">V SIGN</div>
+          <div class="muted">End-to-end signage solutions — design, fabricate, install. Serving Andhra Pradesh & Telangana.</div>
+        </div>
+        <div style="text-align:right">
+          <div class="muted">Email: hello@vsign.example</div>
+          <div class="muted">Phone: +91 99XXXXXXX</div>
+        </div>
+        <div style="width:100%;text-align:center;margin-top:12px;color:var(--muted);font-size:13px">© <span id="yr"></span> V SIGN. All rights reserved.</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Standalone planner logic with same math as other pages — more guided and step-aware.
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    const SERVICE_RATES = {
+      'led-shop': {min:850, max:1500, label:'LED Shop Board'},
+      'acp-hoarding': {min:1200, max:2500, label:'ACP Hoarding'},
+      '3d-letters': {min:1500, max:4000, label:'3D Stainless Letters'},
+      'wayfinding': {min:800, max:1800, label:'Wayfinding'},
+      'hospital': {min:900, max:2000, label:'Hospital Signage'},
+      'school': {min:800, max:1600, label:'School Signage'}
+    };
+
+    // state
+    const planner = {
+      step: 1,
+      service: document.getElementById('serviceSelect').value,
+      width: Number(document.getElementById('width').value || 0),
+      height: Number(document.getElementById('height').value || 0),
+      material: 'acp',
+      led: 'std',
+      city: document.getElementById('city').value || 'hyderabad',
+      warranty: document.getElementById('warranty').value || '3',
+      amc: !!document.getElementById('includeAmc').checked
+    };
+
+    // UI helpers
+    function setActiveStep(n){
+      planner.step = n;
+      document.querySelectorAll('.step-block').forEach((el, idx)=> el.style.display = (idx+1 === n) ? '' : 'none');
+      document.querySelectorAll('#progressLabels .step-pill').forEach(p=> p.classList.toggle('active', Number(p.dataset.step)===n));
+      document.getElementById('btnBack').style.display = (n===1)?'none':'inline-block';
+      document.getElementById('btnNext').textContent = (n===4)?'Finish':'Next';
+      recalc();
+    }
+    setActiveStep(1);
+
+    function startFromStep(n){ setActiveStep(n); window.scrollTo({top:0,behavior:'smooth'}); }
+
+    function goNext(){
+      if(planner.step < 4) setActiveStep(planner.step+1);
+      else { alert('Estimator complete — use Save to download your configuration, or Share to message it. For exact pricing request a site visit.'); }
+    }
+    function goBack(){ if(planner.step>1) setActiveStep(planner.step-1); }
+
+    // change handlers
+    function onChangeService(){ planner.service = document.getElementById('serviceSelect').value; recalc(); }
+    document.getElementById('serviceSelect').addEventListener('change', onChangeService);
+    document.getElementById('width').addEventListener('input', (e)=>{ planner.width = Number(e.target.value||0); recalc();});
+    document.getElementById('height').addEventListener('input', (e)=>{ planner.height = Number(e.target.value||0); recalc();});
+    document.getElementById('city').addEventListener('change', (e)=>{ planner.city = e.target.value; recalc();});
+    document.getElementById('warranty').addEventListener('change', (e)=>{ planner.warranty = e.target.value; recalc();});
+    document.getElementById('includeAmc').addEventListener('change',(e)=>{ planner.amc = e.target.checked; recalc();});
+
+    // simple material setter (visuals optional)
+    function setMaterial(key){ planner.material = key; recalc(); }
+    window.setMaterial = setMaterial; // expose for inline buttons
+
+    // calculations (same approach: range-based)
+    function recalc(){
+      // area
+      const w = Number(planner.width || 0);
+      const h = Number(planner.height || 0);
+      const area = Math.max(0.01, Math.round((w*h) * 100) / 100);
+
+      const rates = SERVICE_RATES[planner.service] || SERVICE_RATES['led-shop'];
+      const minRate = rates.min, maxRate = rates.max;
+
+      // material cost range
+      const matMin = Math.round(area * minRate);
+      const matMax = Math.round(area * maxRate);
+
+      // fabrication ~ 28-32% approx -> use 30% midpoint
+      const fabMin = Math.round(matMin * 0.30);
+      const fabMax = Math.round(matMax * 0.30);
+
+      // electronics roughly proportional to area (200-400)
+      const electMin = Math.round(area * 200);
+      const electMax = Math.round(area * 400);
+
+      // installation roughly area * 150-300
+      const instMin = Math.round(area * 150);
+      const instMax = Math.round(area * 300);
+
+      // amc optional
+      const amcMin = planner.amc ? Math.round((matMin + fabMin + electMin) * 0.12) : 0;
+      const amcMax = planner.amc ? Math.round((matMax + fabMax + electMax) * 0.12) : 0;
+
+      // city multiplier small variance
+      const cityMult = (planner.city === 'hyderabad') ? 1.00 : 1.05;
+      const warrantyMult = (planner.warranty === '3') ? 1.00 : (planner.warranty === '5') ? 1.20 : 1.50;
+
+      const subMin = Math.round((matMin + fabMin + electMin + instMin + amcMin) * cityMult);
+      const subMax = Math.round((matMax + fabMax + electMax + instMax + amcMax) * cityMult);
+
+      const gstMin = Math.round(subMin * 0.18);
+      const gstMax = Math.round(subMax * 0.18);
+
+      const totalMin = Math.round((subMin + gstMin) * warrantyMult);
+      const totalMax = Math.round((subMax + gstMax) * warrantyMult);
+
+      // UI Updates aside
+      document.getElementById('asideRange').textContent = `₹${minRate.toLocaleString()} – ₹${maxRate.toLocaleString()} / sqft`;
+      document.getElementById('asideArea').textContent = `${area.toLocaleString()} sqft`;
+
+      document.getElementById('asideMaterial').textContent = `₹${matMin.toLocaleString()} — ₹${matMax.toLocaleString()}`;
+      document.getElementById('asideFabric').textContent = `₹${fabMin.toLocaleString()} — ₹${fabMax.toLocaleString()}`;
+      document.getElementById('asideElect').textContent = `₹${electMin.toLocaleString()} — ₹${electMax.toLocaleString()}`;
+      document.getElementById('asideInstall').textContent = `₹${instMin.toLocaleString()} — ₹${instMax.toLocaleString()}`;
+      document.getElementById('asideAmc').textContent = `₹${amcMin.toLocaleString()} — ₹${amcMax.toLocaleString()}`;
+      document.getElementById('asideSub').textContent = `₹${subMin.toLocaleString()} — ₹${subMax.toLocaleString()}`;
+      document.getElementById('asideGst').textContent = `₹${gstMin.toLocaleString()} — ₹${gstMax.toLocaleString()}`;
+      document.getElementById('asideTotal').textContent = `₹${totalMin.toLocaleString()} — ₹${totalMax.toLocaleString()}`;
+
+      // review panel
+      document.getElementById('reviewService').textContent = SERVICE_RATES[planner.service].label;
+      document.getElementById('reviewSize').textContent = `${planner.width} ft × ${planner.height} ft · Material: ${planner.material.toUpperCase()}`;
+      document.getElementById('reviewArea').textContent = `${area.toLocaleString()} sqft`;
+
+      document.getElementById('riMaterial').textContent = `₹${matMin.toLocaleString()} — ₹${matMax.toLocaleString()}`;
+      document.getElementById('riFabric').textContent = `₹${fabMin.toLocaleString()} — ₹${fabMax.toLocaleString()}`;
+      document.getElementById('riElect').textContent = `₹${electMin.toLocaleString()} — ₹${electMax.toLocaleString()}`;
+      document.getElementById('riInstall').textContent = `₹${instMin.toLocaleString()} — ₹${instMax.toLocaleString()}`;
+      document.getElementById('riAMC').textContent = `₹${amcMin.toLocaleString()} — ₹${amcMax.toLocaleString()}`;
+      document.getElementById('riSub').textContent = `₹${subMin.toLocaleString()} — ₹${subMax.toLocaleString()}`;
+      document.getElementById('riGst').textContent = `₹${gstMin.toLocaleString()} — ₹${gstMax.toLocaleString()}`;
+      document.getElementById('riTotal').textContent = `₹${totalMin.toLocaleString()} — ₹${totalMax.toLocaleString()}`;
+    }
+
+    // Save and share
+    function downloadQuote(){
+      const payload = {
+        createdAt: new Date().toISOString(),
+        service: planner.service,
+        width: planner.width, height: planner.height,
+        city: planner.city, warranty: planner.warranty, amc: planner.amc
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)],{type:'application/json'});
+      const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=`vsign-quote-${Date.now()}.json`; a.click(); URL.revokeObjectURL(url);
+      alert('Quote saved as JSON. To get a branded PDF, ask me and I will add a PDF generator.');
+    }
+
+    function shareWhatsApp(){
+      const text = encodeURIComponent(`V SIGN estimate:
+Service: ${SERVICE_RATES[planner.service].label}
+Size: ${planner.width}ft x ${planner.height}ft
+Visit: vsign.example`);
+      window.open(`https://wa.me/?text=${text}`, '_blank');
+    }
+
+    // helpers to allow starting at a given step
+    window.startFromStep = startFromStep;
+    window.goNext = goNext;
+    window.goBack = goBack;
+    window.downloadQuote = downloadQuote;
+    window.shareWhatsApp = shareWhatsApp;
+    window.onChangeService = onChangeService;
+
+    // initialize
+    recalc();
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

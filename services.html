@@ -1,482 +1,307 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>V SIGN — Services | Premium Signage in Andhra Pradesh & Telangana</title>
-  <meta name="description" content="V SIGN services: Terrace signage, ACP hoarding, LED shop boards, 3D letters and more. Use our budget planner to get instant range-based estimates." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --primary:#0B3D91;
-      --accent:#FFB100;
-      --muted:#6B7280;
-      --bg:#FBFDFF;
-      --card:#FFFFFF;
-      --glass: rgba(11,61,145,0.06);
-      --radius:18px;
-      --shadow: 0 8px 24px rgba(12, 32, 63, 0.08);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      margin:0;background:var(--bg);color:#0f172a;line-height:1.45;-webkit-font-smoothing:antialiased;
-    }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:1150px;margin:0 auto;padding:0 20px;}
-    header{background:#fff;border-bottom:1px solid rgba(15,23,42,0.04);position:sticky;top:0;z-index:60}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(180deg,var(--primary),#0A2E70);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-family:Poppins;font-size:18px;box-shadow:var(--shadow)}
-    .hero{padding:48px 0 28px;background:linear-gradient(180deg, rgba(11,61,145,0.04), rgba(255,191,0,0.01));border-bottom:1px solid rgba(11,61,145,0.02)}
-    .hero h1{font-family:Poppins,Inter;font-size:32px;margin:0;color:var(--primary);line-height:1.04}
-    .hero p.lead{color:var(--muted);margin-top:10px;font-size:15px}
-    .kicker{display:inline-block;background:var(--glass);color:var(--primary);padding:6px 10px;border-radius:12px;font-weight:600;margin-bottom:12px}
-    .grid-3{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
-    .service-card{background:var(--card);border-radius:14px;overflow:hidden;border:1px solid rgba(11,61,145,0.03);box-shadow:var(--shadow)}
-    .service-card img{width:100%;height:160px;object-fit:cover}
-    .service-body{padding:14px}
-    .price{font-weight:700;color:var(--primary);font-size:16px}
-    .muted{color:var(--muted);font-size:14px}
-    .btn{padding:10px 14px;border-radius:12px;font-weight:600;border:0}
-    .btn-primary{background:var(--primary);color:white}
-    .btn-ghost{background:transparent;border:1px solid rgba(15,23,42,0.06)}
-    footer{margin-top:48px;padding:32px 0;background:#fff;border-top:1px solid rgba(15,23,42,0.04)}
-    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow)}
-    /* Modal */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:200}
-    .modal{width:100%;max-width:920px;background:var(--card);border-radius:16px;padding:18px;box-shadow:0 20px 60px rgba(2,6,23,0.45);max-height:92vh;overflow:auto}
-    .step-bar{height:10px;background:#eef2ff;border-radius:999px;overflow:hidden;margin-top:10px}
-    .step-fill{height:100%;background:linear-gradient(90deg,var(--primary),#3b82f6);width:0%}
-    .grid-2{display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:start}
-    .line-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(15,23,42,0.04)}
-    .total{font-size:20px;font-weight:800;color:var(--primary)}
-    .note{font-size:13px;color:var(--muted);margin-top:8px}
-    @media (max-width:980px){.grid-3{grid-template-columns:1fr;}.services-grid{grid-template-columns:repeat(2,1fr)}.grid-2{grid-template-columns:1fr}}
-    @media (max-width:640px){.services-grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signage Services — V SIGN</title>
+
+<meta name="description" content="Explore signage services including LED boards, ACP hoardings and 3D letters. Understand cost factors and estimate realistic budgets before engaging vendors.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#fbfbfd;
+  --text:#0f172a;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --accent:#0f172a;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui;
+  background:var(--bg);
+  color:var(--text);
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+/* Header */
+header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height:72px;
+}
+
+.brand{
+  font-weight:600;
+}
+
+nav a{
+  margin-left:20px;
+  text-decoration:none;
+  color:var(--muted);
+  font-size:15px;
+}
+
+nav a:hover{
+  color:var(--text);
+}
+
+/* Hero */
+.hero{
+  padding:88px 0 64px;
+}
+
+.hero h1{
+  font-size:40px;
+  font-weight:600;
+  max-width:760px;
+}
+
+.hero p{
+  margin-top:18px;
+  font-size:18px;
+  color:var(--muted);
+  max-width:720px;
+}
+
+/* CTA */
+.cta-primary{
+  display:inline-block;
+  margin-top:32px;
+  padding:14px 26px;
+  background:var(--accent);
+  color:#fff;
+  border-radius:10px;
+  font-weight:500;
+  text-decoration:none;
+}
+
+/* Section */
+.section{
+  padding:72px 0;
+  border-top:1px solid var(--border);
+}
+
+.section h2{
+  font-size:30px;
+  font-weight:600;
+}
+
+.section p{
+  margin-top:14px;
+  color:var(--muted);
+  max-width:720px;
+  font-size:16px;
+}
+
+/* Services Grid */
+.grid{
+  margin-top:40px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:32px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:28px;
+}
+
+.card h3{
+  margin:0;
+  font-size:18px;
+}
+
+.card p{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:15px;
+}
+
+/* Footer */
+footer{
+  padding:48px 0;
+  border-top:1px solid var(--border);
+  background:#fff;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  font-size:14px;
+}
+
+.footer-grid a{
+  display:block;
+  color:var(--muted);
+  text-decoration:none;
+  margin-top:8px;
+}
+
+.footer-grid a:hover{
+  color:var(--text);
+}
+
+@media(max-width:900px){
+  .grid,.footer-grid{
+    grid-template-columns:1fr;
+  }
+  .hero h1{
+    font-size:34px;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">VS</div>
-        <div>
-          <div style="font-weight:700;color:var(--primary);font-family:Poppins">V SIGN</div>
-          <div style="font-size:12px;color:var(--muted)">Premium LED & 3D Signage</div>
-        </div>
+
+<header>
+  <div class="container nav">
+    <div class="brand">V SIGN</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="blogs.html">Insights</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero container">
+  <h1>
+    Signage services,<br>
+    explained clearly.
+  </h1>
+
+  <p>
+    We help businesses understand signage options and cost drivers
+    before they commit to vendors, designs, or installations.
+  </p>
+
+  <a href="app.html" class="cta-primary">
+    Estimate signage cost
+  </a>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Our core services</h2>
+    <p>
+      Each service differs in material, complexity, and installation —
+      which directly affects pricing.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>LED Shop Boards</h3>
+        <p>
+          Common for retail storefronts. Pricing depends on size,
+          LED quality, power supply, and installation height.
+        </p>
       </div>
 
-      <nav style="display:flex;gap:12px;align-items:center">
-        <a href="index.html" style="color:var(--muted)">Home</a>
-        <a href="#services" style="color:var(--muted)">Services</a>
-        <a href="blogs.html" style="color:var(--muted)">Blog</a>
-        <a href="contact.html" style="color:var(--muted)">Contact</a>
-        <button onclick="openPlanner()" class="btn" style="background:var(--accent);border-radius:12px;padding:10px 14px;font-weight:700">Get Instant Quote</button>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="kicker">Full project support • In-house manufacturing • Free site visit</div>
-        <h1>Our Services — build, install & maintain premium signage</h1>
-        <p class="lead">From shop-front signboards to terrace top hoardings and 3D letters — we manage the full cycle: design, fabrication, electrical fit-out and installation. Use the estimator from any service to get an instant budget range.</p>
-        <h2 style="margin-top:18px;color:var(--primary)">Select a service to start</h2>
-        <h3 style="color:var(--muted);font-weight:600;margin-top:6px">Click "Configure" to prefill the Budget Planner with service defaults</h3>
-      </div>
-    </section>
-
-    <section id="services" class="container" style="padding:28px 0">
-      <div class="grid-3">
-        <div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div>
-              <h2 style="font-size:20px;margin:0">All Services</h2>
-              <div class="muted" style="margin-top:6px">Choose a service to configure an estimate or request a site visit.</div>
-            </div>
-            <div style="text-align:right">
-              <div class="small muted">Fast quote</div>
-              <div style="font-weight:700">Instant range-based estimates</div>
-            </div>
-          </div>
-
-          <div class="services-grid" style="margin-top:14px">
-            <!-- Service 1 -->
-            <article class="service-card">
-              <img src="assets/images/led-shop.jpg" alt="LED Shop Board">
-              <div class="service-body">
-                <div style="display:flex;justify-content:space-between;align-items:center">
-                  <div>
-                    <div style="font-weight:700">LED Shop Board</div>
-                    <div class="muted">Retail storefront signage — durable & bright</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="price">₹850 – ₹1,500 / sqft</div>
-                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('led-shop')">Configure</button></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Service 2 -->
-            <article class="service-card">
-              <img src="assets/images/acp-hoarding.jpg" alt="ACP Hoarding">
-              <div class="service-body">
-                <div style="display:flex;justify-content:space-between;align-items:center">
-                  <div>
-                    <div style="font-weight:700">ACP Terrace / Hoarding</div>
-                    <div class="muted">Large building-top hoardings; wind load and structure support</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="price">₹1,200 – ₹2,500 / sqft</div>
-                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('acp-hoarding')">Configure</button></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Service 3 -->
-            <article class="service-card">
-              <img src="assets/images/3d-letters.jpg" alt="3D Letters">
-              <div class="service-body">
-                <div style="display:flex;justify-content:space-between;align-items:center">
-                  <div>
-                    <div style="font-weight:700">3D Stainless Letters</div>
-                    <div class="muted">Luxury finish letters in stainless / brass</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="price">₹1,500 – ₹4,000 / sqft</div>
-                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('3d-letters')">Configure</button></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Service 4 -->
-            <article class="service-card">
-              <img src="assets/images/wayfinding.jpg" alt="Wayfinding">
-              <div class="service-body">
-                <div style="display:flex;justify-content:space-between;align-items:center">
-                  <div>
-                    <div style="font-weight:700">Wayfinding & Directional</div>
-                    <div class="muted">Clear, accessible signage for campuses & hospitals</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="price">₹800 – ₹1,800 / sqft</div>
-                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('wayfinding')">Configure</button></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Service 5 -->
-            <article class="service-card">
-              <img src="assets/images/hospital-sign.jpg" alt="Hospital Signage">
-              <div class="service-body">
-                <div style="display:flex;justify-content:space-between;align-items:center">
-                  <div>
-                    <div style="font-weight:700">Hospital & Clinic Signage</div>
-                    <div class="muted">Emergency boards, directional & compliance signage</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="price">₹900 – ₹2,000 / sqft</div>
-                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('hospital')">Configure</button></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-
-            <!-- Service 6 -->
-            <article class="service-card">
-              <img src="assets/images/school-sign.jpg" alt="School Signage">
-              <div class="service-body">
-                <div style="display:flex;justify-content:space-between;align-items:center">
-                  <div>
-                    <div style="font-weight:700">School & College Signage</div>
-                    <div class="muted">Name boards, wayfinding & safety signage</div>
-                  </div>
-                  <div style="text-align:right">
-                    <div class="price">₹800 – ₹1,600 / sqft</div>
-                    <div style="margin-top:8px"><button class="btn btn-primary" onclick="openPlanner('school')">Configure</button></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <aside>
-          <div class="card">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div>
-                <div style="font-size:13px;color:var(--muted)">Need help choosing?</div>
-                <div style="font-weight:700">Talk to our signage experts</div>
-                <div class="muted" style="margin-top:6px">We recommend a free site visit for accurate final pricing.</div>
-              </div>
-              <div>
-                <a href="tel:+919999999999" class="btn btn-ghost">Call</a>
-              </div>
-            </div>
-
-            <div style="margin-top:12px">
-              <div style="font-weight:700">Our process</div>
-              <ol class="muted" style="margin-top:8px;padding-left:16px">
-                <li>Site visit & measurement</li>
-                <li>Design & proof</li>
-                <li>Fabrication & QA</li>
-                <li>Installation & AMC</li>
-              </ol>
-            </div>
-
-            <div style="margin-top:12px">
-              <div style="font-weight:700">Why local matters</div>
-              <div class="muted" style="margin-top:6px">Local knowledge (AP & Telangana) reduces permit time and optimizes visibility for regional languages and placement.</div>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-          <div>
-            <div style="font-weight:700;color:var(--primary)">V SIGN</div>
-            <div class="muted" style="max-width:360px">End-to-end signage solutions — design, fabricate, install. Serving Andhra Pradesh & Telangana.</div>
-          </div>
-          <div style="text-align:right">
-            <div class="muted">Support: hello@vsign.example</div>
-            <div class="muted">Phone: +91 99XXXXXXX</div>
-          </div>
-        </div>
-        <div style="text-align:center;margin-top:18px;color:var(--muted);font-size:13px">© <span id="yr"></span> V SIGN. All rights reserved.</div>
-      </div>
-    </footer>
-  </main>
-
-  <!-- Modal: Budget Planner (same integrated modal - copy from index if you prefer single source) -->
-  <div id="plannerBackdrop" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true">
-    <div class="modal" role="document" aria-labelledby="plannerTitle">
-      <div class="modal-head" style="display:flex;align-items:center;justify-content:space-between">
-        <div>
-          <div id="plannerTitle" style="font-weight:700;font-size:18px">Interactive Budget Planner</div>
-          <div class="muted" style="margin-top:4px">Smart estimator — area × per-sqft ranges. Use the Configure button to prefill service.</div>
-          <div class="step-bar" aria-hidden="true" style="margin-top:8px"><div id="stepFill" class="step-fill" style="width:0%"></div></div>
-        </div>
-        <div>
-          <button onclick="closePlanner()" class="btn btn-ghost" aria-label="Close planner">Close</button>
-        </div>
+      <div class="card">
+        <h3>ACP Hoardings</h3>
+        <p>
+          Large outdoor signage requiring structural support,
+          permissions, and weather-resistant materials.
+        </p>
       </div>
 
-      <div style="margin-top:12px" class="grid-2">
-        <div>
-          <div id="stepArea">
-            <div class="step" data-step="1">
-              <label>Selected service</label>
-              <select id="serviceSelect" onchange="onServiceChange()" aria-label="Service select">
-                <option value="led-shop">LED Shop Board — ₹850 – ₹1,500 / sqft</option>
-                <option value="acp-hoarding">ACP Hoarding — ₹1,200 – ₹2,500 / sqft</option>
-                <option value="3d-letters">3D Stainless Letters — ₹1,500 – ₹4,000 / sqft</option>
-                <option value="wayfinding">Wayfinding — ₹800 – ₹1,800 / sqft</option>
-                <option value="hospital">Hospital — ₹900 – ₹2,000 / sqft</option>
-                <option value="school">School Signage — ₹800 – ₹1,600 / sqft</option>
-              </select>
-              <div class="note">Tip: choose the service that best matches your signage type; it sets default per-sqft ranges.</div>
-            </div>
-
-            <div class="step" data-step="2" style="margin-top:12px">
-              <label>Width (ft)</label>
-              <input id="widthInput" type="number" min="0.5" step="0.1" value="8">
-              <label style="margin-top:10px">Height (ft)</label>
-              <input id="heightInput" type="number" min="0.5" step="0.1" value="3">
-              <div class="note">Area = Width × Height. Example: 8 × 3 = 24 sqft.</div>
-            </div>
-
-            <div class="step" data-step="3" style="margin-top:12px">
-              <label>City</label>
-              <select id="citySelect">
-                <option value="hyderabad">Hyderabad</option>
-                <option value="vijayawada">Vijayawada</option>
-                <option value="visakhapatnam">Visakhapatnam</option>
-                <option value="guntur">Guntur</option>
-              </select>
-
-              <div style="margin-top:10px">
-                <label>Warranty</label>
-                <select id="warrantySelect">
-                  <option value="3">3 years</option>
-                  <option value="5">5 years (+20%)</option>
-                  <option value="10">10 years (+50%)</option>
-                </select>
-              </div>
-
-              <div style="margin-top:10px">
-                <label><input id="amcCheck" type="checkbox" /> Include AMC estimate</label>
-              </div>
-            </div>
-
-            <div style="margin-top:14px" class="control-row">
-              <button class="btn btn-ghost" onclick="prevStep()">Back</button>
-              <button class="btn btn-primary" onclick="nextStep()">Next</button>
-            </div>
-          </div>
-        </div>
-
-        <aside>
-          <div class="card">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div>
-                <div style="font-size:13px;color:var(--muted)">Price per sqft</div>
-                <div id="priceRange" class="price">₹850 – ₹1,500</div>
-              </div>
-              <div style="text-align:right">
-                <div style="font-size:13px;color:var(--muted)">Area</div>
-                <div id="areaDisplay" style="font-weight:700">24 sqft</div>
-              </div>
-            </div>
-
-            <div style="margin-top:12px">
-              <div class="line-item"><div>Material (estimate)</div><div id="lineMaterial" class="muted">₹20,400</div></div>
-              <div class="line-item"><div>Fabrication</div><div id="lineFabrication" class="muted">₹6,120</div></div>
-              <div class="line-item"><div>Electronics (LEDs)</div><div id="lineElectronics" class="muted">₹4,800</div></div>
-              <div class="line-item"><div>Installation</div><div id="lineInstall" class="muted">₹3,600</div></div>
-              <div class="line-item"><div>AMC (optional)</div><div id="lineAMC" class="muted">₹2,500</div></div>
-              <div class="line-item"><div>Subtotal</div><div id="lineSubtotal" class="muted">₹37,420</div></div>
-              <div class="line-item"><div>GST (18%)</div><div id="lineGst" class="muted">₹6,735</div></div>
-              <div style="display:flex;justify-content:space-between;padding-top:10px">
-                <div class="muted">Estimated total range</div>
-                <div id="totalRange" class="total">₹44,155 — ₹60,000</div>
-              </div>
-
-              <div style="margin-top:12px;display:flex;gap:8px">
-                <button class="btn btn-primary" onclick="saveQuote()">Save Quote</button>
-                <button class="btn btn-ghost" onclick="shareWhatsApp()">Share</button>
-              </div>
-
-              <div class="note" style="margin-top:10px">This is an initial estimate. Final quotes require a site visit.</div>
-            </div>
-          </div>
-        </aside>
+      <div class="card">
+        <h3>3D Letters & Branding</h3>
+        <p>
+          Premium signage using stainless steel or acrylic.
+          Costs vary by finish, depth, and mounting method.
+        </p>
       </div>
     </div>
   </div>
+</section>
 
-  <script>
-    // Basic helpers & state same as index.html to keep behavior identical.
-    document.getElementById('yr').textContent = new Date().getFullYear();
+<section class="section">
+  <div class="container">
+    <h2>Why costs vary</h2>
+    <p>
+      Signage pricing is not fixed. Several practical factors
+      influence the final budget.
+    </p>
 
-    const SERVICES = {
-      'led-shop': {min:850, max:1500},
-      'acp-hoarding': {min:1200, max:2500},
-      '3d-letters': {min:1500, max:4000},
-      'wayfinding': {min:800, max:1800},
-      'hospital': {min:900, max:2000},
-      'school': {min:800, max:1600}
-    };
+    <div class="grid">
+      <div class="card">
+        <h3>Dimensions</h3>
+        <p>
+          Width and height determine material usage and fabrication effort.
+        </p>
+      </div>
 
-    let state = {
-      step: 1,
-      service: 'led-shop',
-      width: Number(document.getElementById('widthInput').value),
-      height: Number(document.getElementById('heightInput').value),
-      city: document.getElementById('citySelect').value,
-      warranty: document.getElementById('warrantySelect').value,
-      amc: !!document.getElementById('amcCheck').checked
-    };
+      <div class="card">
+        <h3>Location</h3>
+        <p>
+          City, access height, and site conditions affect installation cost.
+        </p>
+      </div>
 
-    function updateStepUI(){
-      const stepFill = document.getElementById('stepFill');
-      const percent = (state.step - 1) / 4 * 100;
-      stepFill.style.width = Math.max(8, percent) + '%';
-      document.querySelectorAll('#stepArea .step').forEach(el=>{
-        el.style.display = (parseInt(el.dataset.step,10) <= state.step) ? 'block' : 'none';
-      });
-    }
-    updateStepUI();
+      <div class="card">
+        <h3>Material choice</h3>
+        <p>
+          ACP, acrylic, stainless steel, and LEDs all carry different costs.
+        </p>
+      </div>
+    </div>
 
-    function openPlanner(prefill){
-      if(prefill && SERVICES[prefill]) {
-        state.service = prefill;
-        document.getElementById('serviceSelect').value = prefill;
-      }
-      document.getElementById('plannerBackdrop').style.display = 'flex';
-      document.getElementById('plannerBackdrop').setAttribute('aria-hidden','false');
-      state.step = 1; updateStepUI(); recalcAll();
-    }
-    function closePlanner(){
-      document.getElementById('plannerBackdrop').style.display = 'none';
-      document.getElementById('plannerBackdrop').setAttribute('aria-hidden','true');
-    }
+    <a href="app.html" class="cta-primary" style="margin-top:40px;">
+      Check your estimated budget
+    </a>
+  </div>
+</section>
 
-    function nextStep(){ if(state.step < 4) state.step++; else state.step = 4; updateStepUI(); }
-    function prevStep(){ if(state.step > 1) state.step--; updateStepUI(); }
+</main>
 
-    function onServiceChange(){ state.service = document.getElementById('serviceSelect').value; recalcAll(); }
-    document.getElementById('widthInput').addEventListener('input',(e)=>{ state.width = Number(e.target.value||0); recalcAll();});
-    document.getElementById('heightInput').addEventListener('input',(e)=>{ state.height = Number(e.target.value||0); recalcAll();});
-    document.getElementById('citySelect').addEventListener('change',(e)=>{ state.city = e.target.value; recalcAll();});
-    document.getElementById('warrantySelect').addEventListener('change',(e)=>{ state.warranty = e.target.value; recalcAll();});
-    document.getElementById('amcCheck').addEventListener('change',(e)=>{ state.amc = e.target.checked; recalcAll();});
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <strong>V SIGN</strong>
+      <p style="margin-top:10px;color:var(--muted)">
+        Transparent signage estimation platform.
+      </p>
+    </div>
 
-    function recalcAll(){
-      const w = Number(state.width || 0);
-      const h = Number(state.height || 0);
-      const area = Math.max(0.01, Math.round((w * h) * 100) / 100);
+    <div>
+      <strong>Explore</strong>
+      <a href="products.html">Products</a>
+      <a href="blogs.html">Insights</a>
+      <a href="faq.html">FAQ</a>
+    </div>
 
-      const rates = SERVICES[state.service] || {min:850, max:1500};
-      const minRate = rates.min; const maxRate = rates.max;
-      const materialMin = Math.round(area * minRate); const materialMax = Math.round(area * maxRate);
-      const fabMin = Math.round(materialMin * 0.30); const fabMax = Math.round(materialMax * 0.30);
-      const electMin = Math.round(area * 200); const electMax = Math.round(area * 400);
-      const installMin = Math.round(area * 150); const installMax = Math.round(area * 300);
-      const amcMin = state.amc ? Math.round((materialMin + fabMin + electMin) * 0.12) : 0;
-      const amcMax = state.amc ? Math.round((materialMax + fabMax + electMax) * 0.12) : 0;
-      const cityMult = (state.city === 'hyderabad') ? 1.00 : 1.05;
-      const warrantyMult = (state.warranty === '3') ? 1.00 : (state.warranty === '5') ? 1.20 : 1.50;
+    <div>
+      <strong>Get started</strong>
+      <a href="app.html">Estimate budget</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
 
-      const subtotalMin = Math.round((materialMin + fabMin + electMin + installMin + amcMin) * cityMult);
-      const subtotalMax = Math.round((materialMax + fabMax + electMax + installMax + amcMax) * cityMult);
-      const gstMin = Math.round(subtotalMin * 0.18); const gstMax = Math.round(subtotalMax * 0.18);
-      const totalMin = Math.round((subtotalMin + gstMin) * warrantyMult); const totalMax = Math.round((subtotalMax + gstMax) * warrantyMult);
-
-      document.getElementById('priceRange').textContent = `₹${minRate.toLocaleString()} – ₹${maxRate.toLocaleString()} / sqft`;
-      document.getElementById('areaDisplay').textContent = `${area.toLocaleString()} sqft`;
-
-      document.getElementById('lineMaterial').textContent = `₹${materialMin.toLocaleString()} — ₹${materialMax.toLocaleString()}`;
-      document.getElementById('lineFabrication').textContent = `₹${fabMin.toLocaleString()} — ₹${fabMax.toLocaleString()}`;
-      document.getElementById('lineElectronics').textContent = `₹${electMin.toLocaleString()} — ₹${electMax.toLocaleString()}`;
-      document.getElementById('lineInstall').textContent = `₹${installMin.toLocaleString()} — ₹${installMax.toLocaleString()}`;
-      document.getElementById('lineAMC').textContent = `₹${amcMin.toLocaleString()} — ₹${amcMax.toLocaleString()}`;
-      document.getElementById('lineSubtotal').textContent = `₹${subtotalMin.toLocaleString()} — ₹${subtotalMax.toLocaleString()}`;
-      document.getElementById('lineGst').textContent = `₹${gstMin.toLocaleString()} — ₹${gstMax.toLocaleString()}`;
-      document.getElementById('totalRange').textContent = `₹${totalMin.toLocaleString()} — ₹${totalMax.toLocaleString()}`;
-    }
-
-    function saveQuote(){
-      const payload = { createdAt: (new Date()).toISOString(), service: state.service, width: state.width, height: state.height, city: state.city, warranty: state.warranty, amc: state.amc };
-      const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a'); a.href = url; a.download = `vsign-quote-${Date.now()}.json`; a.click(); URL.revokeObjectURL(url);
-      alert('Quote saved to your computer (JSON). Use Share for WhatsApp.');
-    }
-
-    function shareWhatsApp(){
-      const text = encodeURIComponent(`Estimate from V SIGN:
-Service: ${state.service}
-Size: ${state.width}ft x ${state.height}ft
-Check estimated range on our site.`);
-      window.open(`https://wa.me/?text=${text}`, '_blank');
-    }
-
-    // initialize
-    recalcAll();
-    document.getElementById('yr').textContent = new Date().getFullYear();
-
-  </script>
 </body>
 </html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner | V SIGN - Get Instant Signage Quote</title>
+    <meta name="description" content="Interactive budget planner for LED signage. Get instant quotes for terrace signs, shop boards, 3D letters in Hyderabad, Vijayawada, Vizag.">
+    
+    <!-- Structured Data for FAQ -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "How much does an LED sign board cost?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "LED sign board prices typically range from ₹850 to ₹4,000 per square foot depending on material, illumination and finishing. Use our budget planner for exact pricing."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How long does installation take?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard signage installation takes 7-9 working days from design approval. Terrace signage may take 30-90 days due to structural requirements."
+            }
+        }]
+    }
+    </script>
+    
+    <!-- Same CSS and JS includes as index.html -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Contact Bar and Navigation (same as index.html) -->
+    
+    <!-- Budget Planner Hero -->
+    <section class="budget-hero">
+        <div class="container">
+            <div class="budget-hero-content">
+                <h1>Interactive Budget Planner</h1>
+                <p>Configure your custom signage and get instant pricing with detailed breakdown</p>
+                
+                <div class="progress-steps">
+                    <div class="step-indicator active">1</div>
+                    <div class="step-indicator">2</div>
+                    <div class="step-indicator">3</div>
+                    <div class="step-indicator">4</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Budget Planner Content -->
+    <section class="budget-planner">
+        <div class="container">
+            <div class="planner-grid">
+                <!-- Left Column - Configuration -->
+                <div class="planner-config">
+                    <div class="step step-1 active">
+                        <h2>Select Product Type</h2>
+                        <div class="product-options">
+                            <div class="product-option selected" data-value="terrace">
+                                <i class="fas fa-building"></i>
+                                <h3>Terrace Signage</h3>
+                                <p>High-rise rooftop signs</p>
+                                <span class="price-range">₹1,200-4,000/sqft</span>
+                            </div>
+                            <div class="product-option" data-value="shop">
+                                <i class="fas fa-store"></i>
+                                <h3>Shop Board</h3>
+                                <p>Retail store signage</p>
+                                <span class="price-range">₹850-1,500/sqft</span>
+                            </div>
+                            <div class="product-option" data-value="3d-letters">
+                                <i class="fas fa-text-height"></i>
+                                <h3>3D Letters</h3>
+                                <p>Premium dimensional letters</p>
+                                <span class="price-range">₹1,500-3,000/sqft</span>
+                            </div>
+                            <div class="product-option" data-value="hospital">
+                                <i class="fas fa-hospital"></i>
+                                <h3>Hospital Signage</h3>
+                                <p>Medical facility signs</p>
+                                <span class="price-range">₹850-2,000/sqft</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary next-step">Next: Dimensions <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    
+                    <div class="step step-2">
+                        <h2>Specify Dimensions & Location</h2>
+                        <div class="dimension-controls">
+                            <div class="dimension-slider">
+                                <label>Width (feet)</label>
+                                <input type="range" id="width-slider" min="1" max="50" value="10">
+                                <span id="width-value">10 ft</span>
+                            </div>
+                            <div class="dimension-slider">
+                                <label>Height (feet)</label>
+                                <input type="range" id="height-slider" min="1" max="20" value="3">
+                                <span id="height-value">3 ft</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Quantity</label>
+                                <input type="number" id="quantity" value="1" min="1">
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <select id="city-select">
+                                    <option value="hyderabad">Hyderabad</option>
+                                    <option value="vijayawada">Vijayawada</option>
+                                    <option value="vizag">Visakhapatnam</option>
+                                    <option value="guntur">Guntur</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Installation Location</label>
+                                <select id="location-select">
+                                    <option value="rooftop">Rooftop/Terrace</option>
+                                    <option value="facade">Building Facade</option>
+                                    <option value="ground">Ground Level</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button class="btn-primary next-step">Next: Customization <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="step step-3">
+                        <h2>Customize Your Sign</h2>
+                        
+                        <div class="customization-section">
+                            <h3>Material</h3>
+                            <div class="option-grid">
+                                <div class="material-option selected" data-value="acp">
+                                    <div class="option-content">
+                                        <h4>ACP Board</h4>
+                                        <p>Most popular, weather resistant</p>
+                                        <span class="price-tag">+0%</span>
+                                    </div>
+                                </div>
+                                <div class="material-option" data-value="stainless">
+                                    <div class="option-content">
+                                        <h4>Stainless Steel</h4>
+                                        <p>Premium finish, durable</p>
+                                        <span class="price-tag">+80%</span>
+                                    </div>
+                                </div>
+                                <div class="material-option" data-value="acrylic">
+                                    <div class="option-content">
+                                        <h4>Acrylic LED</h4>
+                                        <p>Modern glow effect</p>
+                                        <span class="price-tag">+40%</span>
+                                    </div>
+                                </div>
+                                <div class="material-option" data-value="brass">
+                                    <div class="option-content">
+                                        <h4>Brass</h4>
+                                        <p>Luxury heritage look</p>
+                                        <span class="price-tag">+120%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="customization-section">
+                            <h3>LED Type</h3>
+                            <div class="option-grid">
+                                <div class="led-option selected" data-value="standard">
+                                    <div class="option-content">
+                                        <h4>Standard White</h4>
+                                        <p>Energy efficient</p>
+                                    </div>
+                                </div>
+                                <div class="led-option" data-value="premium">
+                                    <div class="option-content">
+                                        <h4>Premium High-Bright</h4>
+                                        <p>Extra visibility</p>
+                                    </div>
+                                </div>
+                                <div class="led-option" data-value="rgb">
+                                    <div class="option-content">
+                                        <h4>RGB Color</h4>
+                                        <p>Multi-color effects</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="customization-section">
+                            <h3>Warranty</h3>
+                            <div class="option-grid">
+                                <div class="warranty-option selected" data-value="3">
+                                    <div class="option-content">
+                                        <h4>3 Years</h4>
+                                        <p>Standard coverage</p>
+                                    </div>
+                                </div>
+                                <div class="warranty-option" data-value="5">
+                                    <div class="option-content">
+                                        <h4>5 Years</h4>
+                                        <p>Recommended</p>
+                                    </div>
+                                </div>
+                                <div class="warranty-option" data-value="10">
+                                    <div class="option-content">
+                                        <h4>10 Years</h4>
+                                        <p>Premium protection</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-actions">
+                            <button class="btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                            <button class="btn-primary next-step">Next: Summary <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="step step-4">
+                        <h2>Quote Summary</h2>
+                        
+                        <div class="summary-card">
+                            <h3>Project Details</h3>
+                            <div class="summary-grid">
+                                <div class="summary-item">
+                                    <span class="label">Product</span>
+                                    <span class="value" id="summary-product">Terrace Signage</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Size</span>
+                                    <span class="value" id="summary-size">10 × 3 ft</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Material</span>
+                                    <span class="value" id="summary-material">ACP Board</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">Warranty</span>
+                                    <span class="value" id="summary-warranty">3 Years</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="label">City</span>
+                                    <span class="value" id="summary-city">Hyderabad</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <form id="quote-form">
+                            <h3>Contact Information</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="Email Address" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea name="message" placeholder="Additional requirements or notes..." rows="3"></textarea>
+                            </div>
+                            
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="site-visit" name="site-visit" checked>
+                                <label for="site-visit">Include free site visit</label>
+                            </div>
+                            
+                            <div class="step-actions">
+                                <button type="button" class="btn-secondary prev-step"><i class="fas fa-arrow-left"></i> Back</button>
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-paper-plane"></i> Submit Quote Request
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Price Summary -->
+                <div class="planner-summary">
+                    <div class="summary-card">
+                        <h3>Price Breakdown</h3>
+                        
+                        <div class="price-breakdown">
+                            <div class="price-item">
+                                <span>Material Cost</span>
+                                <span data-price="material">₹25,500</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Fabrication</span>
+                                <span data-price="fabrication">₹7,650</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Electronics (LED)</span>
+                                <span data-price="electronics">₹6,000</span>
+                            </div>
+                            <div class="price-item">
+                                <span>Installation</span>
+                                <span data-price="installation">₹4,500</span>
+                            </div>
+                            <div class="price-item amc-item" style="display: none;">
+                                <span>Annual Maintenance (AMC)</span>
+                                <span data-price="amc">₹5,872/year</span>
+                            </div>
+                            
+                            <div class="price-divider"></div>
+                            
+                            <div class="price-item">
+                                <span>GST (18%)</span>
+                                <span data-price="gst">₹7,917</span>
+                            </div>
+                            
+                            <div class="price-divider"></div>
+                            
+                            <div class="price-total">
+                                <span>Total</span>
+                                <span data-price="total">₹51,567</span>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-features">
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Free Site Visit Included</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>3D Design Preview</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>No Hidden Costs</span>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-actions">
+                            <button class="btn-secondary" id="download-pdf">
+                                <i class="fas fa-download"></i> Download PDF
+                            </button>
+                            <button class="btn-primary" id="share-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Share on WhatsApp
+                            </button>
+                        </div>
+                        
+                        <div class="warranty-note">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Quality Guarantee</strong>
+                                <p>3-year warranty • Free site visit • 7-9 day installation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="budget-faq">
+        <div class="container">
+            <h2>Common Questions About Pricing</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How accurate is this quote?</h3>
+                    <p>Our interactive calculator provides estimates within 90% accuracy. Final pricing may vary slightly based on site-specific requirements, which we assess during the free site visit.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What's included in the price?</h3>
+                    <p>The quote includes material, fabrication, LED components, professional installation, GST, and a free site visit. Optional services like AMC and electrical work are separate.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer payment plans?</h3>
+                    <p>Yes, we offer flexible payment options: 50% advance, 40% after installation, and 10% after completion. We also accept all major credit/debit cards and UPI.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What if my requirements change?</h3>
+                    <p>You can modify your requirements anytime before production begins. We'll recalculate the quote and get your approval before proceeding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer (same as index.html) -->
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/budget-planner.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</body>
+</html>
